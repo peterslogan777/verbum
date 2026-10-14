@@ -1,0 +1,155 @@
+/* =====================================================================
+   VERBUM — Salle 10 · Le Livre indestructible (E12)
+   ===================================================================== */
+:root { --braise: #e8762c; --braise-clair: #ffb15c; --cendre: #2b2522; --vellum: #efe0bd; }
+
+.s10-fig { margin: 0; }
+.s10-fig img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid var(--line); box-shadow: var(--shadow-card); cursor: zoom-in; }
+.s10-fig figcaption, .ch-img figcaption { margin-top: .7rem; font-size: var(--t-sm); color: var(--text-mute); }
+.s10-fig-sm { margin-top: var(--s-5); }
+.s10-fig-sm img { aspect-ratio: 16 / 9; }
+.cpt-n { font-variant-numeric: lining-nums tabular-nums; }
+.q-grc .qh { font-family: var(--f-grec) !important; font-size: clamp(1.2rem, 1rem + .8vw, 1.6rem); }
+.q-lat { margin-top: var(--s-5); }
+
+/* --- I. Édit de 303 --- */
+.s10-ed { background: radial-gradient(70% 60% at 85% 10%, rgba(139, 26, 26, .16), transparent 70%); }
+.ed-grid, .ri-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.ci-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.ci-doc { position: relative; padding: clamp(1.4rem, 3vw, 2.2rem); border-radius: var(--radius-lg); color: #2a1f14;
+  background: radial-gradient(120% 90% at 30% 20%, #f3e5c4, #e2cc9c 70%, #cfb37c); box-shadow: var(--shadow-card), inset 0 0 60px rgba(120, 80, 30, .35); }
+.ci-k { font-family: var(--f-ui); font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: #7a5a2c; margin-bottom: 1rem; }
+.ci-pv { list-style: none; padding: 0; margin: 0; display: grid; gap: .85rem; }
+.ci-pv li { display: grid; gap: .15rem; padding-left: 1rem; border-left: 2px solid rgba(139, 26, 26, .55); }
+.ci-pv b { font-family: var(--f-ui); font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: #8b1a1a; }
+.ci-pv span { font-family: var(--f-titre); font-size: 1.18rem; line-height: 1.45; }
+.ci-pv .ci-note span { font-style: italic; color: #5a4630; }
+.ci-src { margin-top: 1.1rem; font-size: .9rem; color: #5a4630; }
+.ci-side p { color: var(--text-dim); }
+.ed-apres { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(1.2rem, 3vw, 2.5rem); align-items: center; margin-top: var(--s-8);
+  padding: clamp(1.4rem, 3vw, 2.2rem); border-radius: var(--radius-lg); border: 1px solid var(--line-strong); background: linear-gradient(120deg, rgba(201, 168, 76, .08), rgba(13, 27, 42, .5)); }
+.ed-apres-n { display: grid; justify-items: center; }
+.ed-apres-n span { font-family: var(--f-titre); font-size: clamp(3rem, 2rem + 3vw, 4.6rem); line-height: 1; color: var(--or-clair); font-variant-numeric: lining-nums; }
+.ed-apres-n small { font-family: var(--f-ui); font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--text-mute); }
+.ed-apres h3 { font-family: var(--f-titre); font-weight: 500; font-size: 1.5rem; color: var(--blanc-parchemin); margin-bottom: .4rem; }
+.ed-apres p { color: var(--text-dim); }
+.ed-src { font-size: .88rem; color: var(--text-mute) !important; margin-top: .4rem; }
+
+/* --- II. Le bûcher --- */
+.s10-bu { background: radial-gradient(60% 50% at 20% 40%, rgba(232, 118, 44, .10), transparent 70%); }
+.bu-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.bu-scene { container-type: inline-size; position: relative; aspect-ratio: 3 / 4; max-height: 760px; margin-inline: auto; border-radius: 6px; overflow: hidden; background: #120d0a; box-shadow: 0 30px 60px rgba(0, 0, 0, .55); }
+.bu-under { position: absolute; inset: 0; padding: 7cqw 11cqw 6cqw; display: flex; flex-direction: column; gap: 2cqw; color: #2b2015;
+  background: radial-gradient(110% 80% at 40% 30%, #f6ead0, #e7d3a8 70%, #cdb07a); }
+.bu-u-k { font-family: var(--f-ui); font-size: max(.6rem, 2cqw); letter-spacing: .22em; text-transform: uppercase; color: #8b1a1a; }
+.bu-u-t { font-family: 'Maguntia', var(--f-titre); font-size: 5.6cqw; line-height: 1.1; color: #2b2015; }
+.bu-u-v { font-family: var(--f-titre); font-size: 4.1cqw; line-height: 1.42; text-align: justify; hyphens: auto; }
+.bu-u-f { margin-top: auto; font-size: max(.72rem, 2.7cqw); line-height: 1.4; color: #5a4630; border-top: 1px solid rgba(90, 70, 48, .35); padding-top: .6rem; }
+.bu-canvas, .bu-fx { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.bu-fx { pointer-events: none; }
+.bu-bar { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1rem; margin-top: 1rem; }
+.bu-msg { flex: 1 1 14rem; font-size: .95rem; color: var(--text-mute); }
+.bu-trad { margin-top: 1rem; border: 1px solid var(--line); border-radius: var(--radius); padding: .9rem 1.1rem; background: rgba(255, 255, 255, .02); }
+.bu-trad summary { cursor: pointer; font-family: var(--f-ui); font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--or-clair); }
+.bu-trad p { margin-top: .7rem; color: var(--text-dim); }
+.bu-en { font-family: var(--f-titre); font-style: italic; color: var(--parchemin) !important; }
+.bu-note { font-size: .88rem; }
+.bu-tl { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; border-left: 1px solid var(--line-strong); }
+.bu-tl li { position: relative; display: grid; grid-template-columns: 6.4rem minmax(0, 1fr); gap: 1rem; padding: .95rem 0 .95rem 1.4rem; }
+.bu-tl li::before { content: ""; position: absolute; left: -5px; top: 1.35rem; width: 9px; height: 9px; border-radius: 50%; background: var(--braise); box-shadow: 0 0 12px var(--braise); }
+.bu-tl b { font-family: var(--f-titre); font-size: 1.25rem; color: var(--or-clair); font-variant-numeric: lining-nums; white-space: nowrap; }
+.bu-tl span { color: var(--text-dim); }
+.bu-duo, .it-duo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3rem); margin-top: var(--s-8); align-items: start; }
+.bu-lettre { padding: clamp(1.3rem, 3vw, 2rem); border-radius: var(--radius-lg); border: 1px solid var(--line-strong); background: linear-gradient(180deg, rgba(201, 168, 76, .06), rgba(10, 10, 15, .4)); }
+.bu-lettre-k { font-family: var(--f-ui); font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--or-sacre); }
+.bu-lettre-t { margin-top: .8rem; font-family: var(--f-titre); font-style: italic; font-size: 1.3rem; line-height: 1.5; color: var(--parchemin); }
+.bu-lettre-s { margin-top: .6rem; font-size: .9rem; color: var(--text-mute); }
+
+/* --- III. Interdits : cartes recto / verso --- */
+.it-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; }
+.it-card { display: block; width: 100%; height: 100%; min-height: 23rem; padding: 0; border: 0; background: none; text-align: left; perspective: 1400px; cursor: pointer; }
+.it-in { position: relative; display: block; width: 100%; height: 100%; min-height: inherit; transform-style: preserve-3d; transition: transform .8s var(--ease-out); }
+.it-card[aria-pressed="true"] .it-in { transform: rotateY(180deg); }
+.it-f { position: absolute; inset: 0; display: flex; flex-direction: column; gap: .55rem; padding: 1.4rem 1.4rem 1.2rem; border-radius: var(--radius-lg); backface-visibility: hidden; -webkit-backface-visibility: hidden; border: 1px solid var(--line); }
+.it-recto { background: linear-gradient(170deg, rgba(139, 26, 26, .28), rgba(20, 14, 14, .92) 60%); }
+.it-verso { transform: rotateY(180deg); background: linear-gradient(170deg, rgba(201, 168, 76, .2), rgba(13, 27, 42, .95) 60%); border-color: var(--line-strong); justify-content: center; }
+.it-y { font-family: var(--f-titre); font-size: 2.6rem; line-height: 1; color: var(--braise-clair); font-variant-numeric: lining-nums; }
+.it-verso .it-l { color: var(--or-clair); }
+.it-l { font-family: var(--f-ui); font-size: .66rem; letter-spacing: .18em; text-transform: uppercase; color: var(--text-mute); }
+.it-t { font-family: var(--f-titre); font-size: 1.35rem; color: var(--blanc-parchemin); line-height: 1.2; }
+.it-p { font-size: .98rem; color: var(--text-dim); line-height: 1.55; }
+.it-verso .it-p { color: var(--parchemin); font-size: 1.02rem; }
+.it-hint { margin-top: auto; font-family: var(--f-ui); font-size: .64rem; letter-spacing: .18em; text-transform: uppercase; color: var(--or-sacre); }
+.it-card:focus-visible .it-f { outline: 2px solid var(--or-clair); outline-offset: 3px; }
+
+/* --- IV. Rideau de fer --- */
+.s10-ri { background: radial-gradient(70% 60% at 80% 30%, rgba(13, 27, 42, .9), transparent 70%); }
+.ri-grid p { color: var(--text-dim); margin-bottom: .9rem; }
+.ri-grid b { color: var(--blanc-parchemin); }
+.pe-bloc { position: relative; margin-top: var(--s-8); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line-strong); box-shadow: var(--shadow-card); min-height: 26rem; display: flex; align-items: flex-end; }
+.pe-img { position: absolute; inset: 0; margin: 0; }
+.pe-img img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; }
+.pe-bloc::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5, 10, 20, .92) 0, rgba(5, 10, 20, .72) 45%, rgba(5, 10, 20, .05) 80%); pointer-events: none; }
+.pe-txt { position: relative; z-index: 1; max-width: 36rem; padding: clamp(1.4rem, 4vw, 3rem); pointer-events: none; }
+.pe-txt h3 { font-family: var(--f-titre); font-weight: 500; font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.4rem); color: var(--blanc-parchemin); margin: .4rem 0 .7rem; }
+.pe-txt h3 em { color: var(--or-clair); }
+.pe-txt p { color: var(--parchemin); }
+.rt-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(1.5rem, 3vw, 2.5rem); align-items: start; }
+.rt-canvas { display: block; width: 100%; aspect-ratio: 4 / 3; border-radius: var(--radius-lg); border: 1px solid var(--line-strong); background: radial-gradient(90% 90% at 40% 40%, #12243a, #0b1522 70%); box-shadow: var(--shadow-card); }
+.rt-hint { margin-top: .6rem; font-size: var(--t-xs); color: var(--text-mute); text-align: center; }
+.rt-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .45rem; }
+.rt-btn { width: 100%; display: grid; grid-template-columns: 6.6rem minmax(0, 1fr); column-gap: .9rem; align-items: baseline; text-align: left; padding: .7rem 1rem; border-radius: 12px; border: 1px solid var(--line); background: rgba(255, 255, 255, .02); transition: border-color .3s, background .3s; }
+.rt-btn:hover, .rt-btn[aria-pressed="true"] { border-color: var(--line-strong); background: rgba(232, 118, 44, .08); }
+.rt-y { grid-row: span 2; font-family: var(--f-titre); font-size: 1.05rem; color: var(--braise-clair); font-variant-numeric: lining-nums; }
+.rt-t { font-family: var(--f-titre); font-size: 1.15rem; color: var(--blanc-parchemin); }
+.rt-l { font-family: var(--f-ui); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-mute); }
+.rt-info { padding: .7rem 1rem .3rem 1rem; font-size: .98rem; color: var(--text-dim); }
+
+/* --- V. Vrai ou légende --- */
+.vl-score { display: inline-flex; gap: .5rem; align-items: baseline; margin-bottom: 1.2rem; padding: .5rem 1rem; border-radius: 999px; border: 1px solid var(--line-strong); font-family: var(--f-ui); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); }
+.vl-score b { font-family: var(--f-titre); font-size: 1.3rem; color: var(--or-clair); letter-spacing: 0; }
+.vl-done { color: var(--or-clair); }
+.vl-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; }
+.vl-q { padding: 1.4rem; border-radius: var(--radius-lg); border: 1px solid var(--line); background: linear-gradient(180deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, .01)); transition: border-color .4s; }
+.vl-q.is-ok { border-color: rgba(143, 168, 76, .6); }
+.vl-q.is-ko { border-color: rgba(178, 60, 50, .6); }
+.vl-n { font-family: var(--f-ui); font-size: .64rem; letter-spacing: .2em; text-transform: uppercase; color: var(--text-mute); }
+.vl-t { margin-top: .5rem; font-family: var(--f-titre); font-size: 1.28rem; line-height: 1.4; color: var(--blanc-parchemin); }
+.vl-btns { display: flex; gap: .6rem; margin-top: 1rem; }
+.vl-b { flex: 1; padding: .7rem 1rem; border-radius: 999px; border: 1px solid var(--line-strong); font-family: var(--f-ui); font-size: .76rem; letter-spacing: .16em; text-transform: uppercase; color: var(--parchemin); transition: background .3s, border-color .3s, opacity .3s; }
+.vl-b:hover:not(:disabled) { background: rgba(201, 168, 76, .12); }
+.vl-b:disabled { cursor: default; opacity: .45; }
+.vl-b.is-pick { opacity: 1; background: rgba(201, 168, 76, .18); border-color: var(--or-clair); }
+.vl-r { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); animation: vlIn .5s var(--ease-out); }
+.vl-r p { color: var(--text-dim); font-size: 1rem; }
+.vl-verdict { display: flex; align-items: center; gap: .6rem; margin-bottom: .5rem; }
+.vl-you { font-family: var(--f-ui); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-mute); font-weight: 500; }
+@keyframes vlIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* --- VI. Chiffres --- */
+.ch-img { margin: 0 0 var(--s-7); }
+.ch-img img { width: 100%; aspect-ratio: 21 / 8; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid var(--line); box-shadow: var(--shadow-card); cursor: zoom-in; }
+.s10-cpt { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.s10-cpt .cpt-n { white-space: nowrap; font-size: clamp(1.9rem, 1.2rem + 1.8vw, 3rem); }
+.ch-src { margin-top: 1rem; font-size: .88rem; color: var(--text-mute); }
+.ch-quotes { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.2rem; margin-top: var(--s-8); }
+
+/* --- Responsive --- */
+@media (max-width: 1000px) {
+  .ed-grid, .ri-grid, .ci-grid, .bu-grid, .bu-duo, .it-duo, .rt-grid, .ch-quotes { grid-template-columns: minmax(0, 1fr); }
+  .it-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vl-list { grid-template-columns: minmax(0, 1fr); }
+  .bu-scene { max-width: 560px; }
+}
+@media (max-width: 640px) {
+  .it-list, .s10-cpt { grid-template-columns: minmax(0, 1fr); }
+  .it-card { min-height: 21rem; }
+  .ed-apres { grid-template-columns: minmax(0, 1fr); }
+  .bu-tl li { grid-template-columns: minmax(0, 1fr); gap: .2rem; }
+  .pe-bloc { min-height: 0; flex-direction: column; align-items: stretch; }
+  .pe-img { position: relative; aspect-ratio: 16 / 10; }
+  .pe-bloc::after { display: none; }
+  .pe-txt { pointer-events: auto; }
+  .ch-img img { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) { .it-in { transition: none; } }

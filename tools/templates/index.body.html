@@ -1,0 +1,233 @@
+
+<!-- ============ LOADER : דָּבָר (davar) — « la Parole » ============ -->
+<div class="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <svg viewBox="0 0 420 200"><text class="davar" x="210" y="150" text-anchor="middle" direction="rtl">דבר</text></svg>
+    <div class="loader-word">VERBUM</div>
+    <div class="loader-sub">La Parole qui traverse les millénaires</div>
+    <div class="loader-gloss">דָּבָר · <i>davar</i> — « parole » en hébreu · <i>verbum</i> — « parole » en latin</div>
+  </div>
+</div>
+
+<main id="contenu">
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-slides" data-depth=".22" aria-hidden="false">
+      {{HERO_SLIDES}}
+  </div>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="hero-vignette" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <span class="kicker hero-kicker">Musée virtuel · Hall d'entrée</span>
+    <h1 class="hero-title" id="hero-title" aria-label="VERBUM">
+      <span class="ch" style="--i:0" aria-hidden="true">V</span><span class="ch" style="--i:1" aria-hidden="true">E</span><span class="ch" style="--i:2" aria-hidden="true">R</span><span class="ch" style="--i:3" aria-hidden="true">B</span><span class="ch" style="--i:4" aria-hidden="true">U</span><span class="ch" style="--i:5" aria-hidden="true">M</span>
+    </h1>
+    <p class="hero-subtitle">Le livre le plus lu, le plus traduit, le plus préservé de l'histoire humaine</p>
+    <p class="hero-tagline">« La Parole qui traverse les millénaires » — 3 500 ans de transmission, des rouleaux d'argent de Jérusalem aux pages fantômes du Codex H.</p>
+    <div class="hero-cta">
+      <a class="btn btn-or" href="#parcours">Entrer dans le musée {{ARROW}}</a>
+      <button class="btn btn-ghost" type="button" data-audio-trigger="intro">{{PLAY_SM}} Écouter l'introduction<span class="dur">&nbsp;· 2 min 25</span></button>
+    </div>
+  </div>
+  <div class="hero-caption" aria-live="polite"><span class="cap-label">Illustration numérique</span><span class="cap-text">Le désert de Judée à l'aube, face à la mer Morte et aux monts de Moab</span></div>
+  <div class="hero-dots" role="group" aria-label="Images du hall d'entrée">{{HERO_DOTS}}</div>
+  <a class="scroll-cue" href="#prologue" aria-label="Faire défiler vers le prologue"><span>Défiler</span><span class="line"></span></a>
+</section>
+
+<!-- ============ PROLOGUE ============ -->
+<section class="section prologue" id="prologue">
+  <div class="container-narrow center">
+    <span class="kicker" data-reveal>Prologue</span>
+    <h2 class="h-section" data-reveal>Une parole <em>gardée</em> à travers les âges</h2>
+    <p class="lead" data-reveal>Gravée sur l'argent, copiée sur le cuir et le papyrus, comptée lettre par lettre, cachée dans des jarres, imprimée par millions : bienvenue dans l'histoire de la transmission de la Bible.</p>
+
+    <figure class="parchment" data-unroll>
+      <span class="roller roller-l" aria-hidden="true"></span>
+      <span class="roller roller-r" aria-hidden="true"></span>
+      <div class="sheet">
+        <p class="heb" lang="he">יָבֵשׁ חָצִיר נָבֵל צִיץ וּדְבַר־אֱלֹהֵינוּ יָקוּם לְעוֹלָם׃</p>
+        <p class="translit">yavésh ḥatsir, navél tsits, ou-devar-Élohéinou yaqoum le-olam</p>
+        <blockquote>« L'herbe se dessèche, la fleur se fane, mais la parole de notre Dieu subsiste pour toujours. »</blockquote>
+        <figcaption class="ref">Ésaïe 40:8 · texte hébreu massorétique</figcaption>
+      </div>
+    </figure>
+  </div>
+  <div class="container-narrow">
+    <div class="prologue-cols">
+      <p data-reveal="left">Il y a plus de trois mille ans, des scribes commencèrent à consigner des textes que des millions de personnes lisent encore aujourd'hui. Aucun de leurs originaux, appelés <i>autographes</i>, ne nous est parvenu. Ce que nous possédons, ce sont des copies — et des copies de copies — réalisées avec un soin parfois stupéfiant.</p>
+      <p data-reveal="right">Le présent musée suit ce fil : des rouleaux d'argent de Ketef Hinnom aux manuscrits de la mer Morte, des grands codex grecs à la presse de Gutenberg, jusqu'aux pages « fantômes » du Codex H restituées en 2026. À chaque salle, les textes originaux en hébreu ou en grec sont présentés avec leur traduction française.</p>
+    </div>
+    <div class="center" style="margin-top:3rem" data-reveal>
+      <div class="audio-player" id="audio-intro" data-src="assets/audio/intro-verbum.mp3" data-title="Bienvenue à VERBUM">
+        <button class="ap-play" type="button" aria-label="Lire la narration d'introduction">
+          <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>
+          <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+        </button>
+        <div class="ap-body">
+          <div class="ap-meta"><b>Audioguide · Bienvenue à VERBUM</b><span class="ap-time">0:00 / 2:25</span></div>
+          <canvas class="ap-viz" aria-hidden="true"></canvas>
+          <input class="ap-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Position de lecture">
+        </div>
+      </div>
+      <details class="transcript">
+        <summary>Lire la transcription</summary>
+        <div class="transcript-body">{{TRANSCRIPTION}}</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ FRISE HORIZONTALE ============ -->
+<section class="section frise" id="frise" aria-labelledby="frise-title">
+  <div class="container">
+    <div class="parcours-head">
+      <div>
+        <span class="kicker" data-reveal>Frise chronologique</span>
+        <h2 class="h-section" id="frise-title" data-reveal>3 500 ans <em>en un regard</em></h2>
+      </div>
+      <p class="lead" data-reveal>De Moïse aux pages fantômes du Codex H : faites glisser la frise, cliquez un jalon sur la règle, ou utilisez les flèches du clavier.</p>
+    </div>
+    <div class="fr-ruler" data-reveal>
+      <div class="fr-line"></div>
+      <div class="fr-fill"></div>
+      {{FRISE_LABELS}}
+      {{FRISE_DOTS}}
+      <span class="fr-cursor" aria-hidden="true"></span>
+    </div>
+  </div>
+  <div class="fr-viewport">
+    <div class="fr-track" tabindex="0" aria-label="Frise chronologique, faites défiler horizontalement">{{FRISE_CARDS}}
+      <div class="fr-end" aria-hidden="true"></div>
+    </div>
+  </div>
+  <div class="container fr-controls">
+    <button class="fr-btn" type="button" data-fr="prev" aria-label="Jalon précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12H5M10 6l-6 6 6 6"/></svg></button>
+    <span class="fr-count"><b>1</b> / <span></span></span>
+    <button class="fr-btn" type="button" data-fr="next" aria-label="Jalon suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h16M14 6l6 6-6 6"/></svg></button>
+    <a class="btn btn-ghost fr-all" href="salles/11-frise.html">La grande frise complète {{ARROW}}</a>
+  </div>
+</section>
+
+<!-- ============ PARCOURS ============ -->
+<section class="section" id="parcours">
+  <div class="container">
+    <div class="parcours-head">
+      <div>
+        <span class="kicker" data-reveal>Le parcours</span>
+        <h2 class="h-section" data-reveal>Douze salles, <em>3 500 ans</em> d'histoire</h2>
+      </div>
+      <p class="lead" data-reveal>Suivez la Parole de salle en salle, des premiers textes gravés aux technologies d'imagerie du XXIᵉ siècle. Commencez où vous voulez : chaque salle se visite indépendamment.</p>
+    </div>
+    <div class="salles">{{SALLES}}
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ CARTE DU MONDE ============ -->
+<section class="section carte" id="carte" aria-labelledby="carte-title">
+  <div class="carte-bg" aria-hidden="true"><img src="assets/img/accueil/hero-globe-langues.jpg" alt="" loading="lazy" decoding="async"></div>
+  <div class="container">
+    <div class="center">
+      <span class="kicker" data-reveal>Rayonnement mondial</span>
+      <h2 class="h-section" id="carte-title" data-reveal>De Jérusalem <em>aux extrémités de la terre</em></h2>
+      <p class="lead" data-reveal style="max-width:60ch;margin-inline:auto">Suivez, époque après époque, le chemin de la Bible à travers les langues et les continents. Survolez un point pour en savoir plus.</p>
+    </div>
+    <div class="ep-tabs" role="tablist" aria-label="Époques" data-reveal>{{CARTE_TABS}}
+      <button type="button" class="ep-auto" aria-pressed="false"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg><span>Lecture</span></button>
+    </div>
+    <div class="carte-grid" data-reveal>
+      <div class="carte-map">
+        {{CARTE_SVG}}
+        <div class="carte-tip" role="status" aria-live="polite"></div>
+      </div>
+      <aside class="ep-panels">{{CARTE_PANELS}}</aside>
+    </div>
+    <p class="stats-source">Fond de carte : Natural Earth (domaine public), projection Natural Earth · Les points indiquent des lieux emblématiques, la liste n'est pas exhaustive.</p>
+  </div>
+</section>
+
+<!-- ============ CHIFFRES CLÉS ============ -->
+<section class="section chiffres" id="chiffres">
+  <div class="container">
+    <div class="center">
+      <span class="kicker" data-reveal>En chiffres</span>
+      <h2 class="h-section" data-reveal>Le livre <em>le plus transmis</em> de l'histoire</h2>
+    </div>
+    <div class="stats" data-reveal>
+      <div class="stat"><div class="stat-num" data-count="3">0</div><p class="stat-label">langues originales</p><p class="stat-note">L'hébreu, l'araméen (quelques passages de Daniel et d'Esdras notamment) et le grec.</p></div>
+      <div class="stat"><div class="stat-num"><small>≈</small><span data-count="40">0</span></div><p class="stat-label">rédacteurs</p><p class="stat-note">Bergers, rois, prophètes, pêcheurs, un médecin : des profils très divers.</p></div>
+      <div class="stat"><div class="stat-num"><small>≈</small><span data-count="1600">0</span></div><p class="stat-label">ans de rédaction</p><p class="stat-note">D'environ 1500 av. J.-C. à la fin du Iᵉʳ siècle de notre ère.</p></div>
+      <div class="stat"><div class="stat-num"><small class="pre">plus de</small><span data-count="5800">0</span></div><p class="stat-label">manuscrits grecs du Nouveau Testament</p><p class="stat-note">Papyrus, onciaux, minuscules et lectionnaires recensés, du IIᵉ siècle à l'époque moderne.</p></div>
+      <div class="stat"><div class="stat-num" data-count="807">0</div><p class="stat-label">langues dotées de la Bible complète</p><p class="stat-note">Et le Nouveau Testament seul dans 1 844 autres langues (septembre 2026).</p></div>
+      <div class="stat"><div class="stat-num"><small class="pre">plus de</small><span data-count="4000">0</span></div><p class="stat-label">langues possédant au moins une partie de la Bible</p><p class="stat-note">Sur environ 7 400 langues parlées ou signées dans le monde.</p></div>
+    </div>
+    <p class="stats-source">Sources : Wycliffe Global Alliance, statistiques d'accès aux Écritures (août 2025) · Institut für Neutestamentliche Textforschung, Münster (liste des manuscrits grecs).</p>
+  </div>
+</section>
+
+<!-- ============ CONVENTIONS ============ -->
+<section class="section" id="conventions">
+  <div class="container">
+    <div class="center">
+      <span class="kicker" data-reveal>Guide du visiteur</span>
+      <h2 class="h-section" data-reveal>Les <em>conventions</em> du musée</h2>
+    </div>
+    <div class="conventions">
+      <div class="convention" data-reveal>
+        <div class="demo"><span class="badge badge-canon">Canonique</span><span class="badge badge-apo">Apocryphe</span></div>
+        <h3>Canon et apocryphes</h3>
+        <p>Chaque manuscrit porte un badge : vert doré pour les livres du canon biblique, rouge antique pour les textes non retenus.</p>
+      </div>
+      <div class="convention" data-reveal>
+        <div class="demo"><span class="heb" lang="he">יהוה</span><span class="ui" style="color:var(--text-mute)">→</span><span class="tetragramme">Jéhovah</span></div>
+        <h3>Le nom divin</h3>
+        <p>Le tétragramme יהוה (YHWH), présent près de 7 000 fois dans le texte hébreu, est rendu par « Jéhovah » dans toutes nos traductions.</p>
+      </div>
+      <div class="convention" data-reveal>
+        <div class="demo"><span class="grc" lang="grc" style="font-size:1.35rem;color:var(--or-clair)">Ἐν ἀρχῇ</span><span style="color:var(--text-dim);font-style:italic">« Au commencement »</span></div>
+        <h3>Toujours traduit</h3>
+        <p>Aucun texte hébreu, araméen ou grec n'apparaît sans sa traduction française immédiate.</p>
+      </div>
+      <div class="convention" data-reveal>
+        <div class="demo"><span class="badge badge-debat">Datation débattue</span></div>
+        <h3>Rigueur des dates</h3>
+        <p>Chaque datation est donnée avec sa marge. Quand les spécialistes divergent, les positions sont exposées.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ À LA UNE ============ -->
+<section class="section" id="une">
+  <div class="container">
+    <span class="kicker" data-reveal>À la une</span>
+    <h2 class="h-section" data-reveal>Deux salles à <em>ne pas manquer</em></h2>
+    <div class="une">
+      <article class="une-card une-qumran" data-reveal="left">
+        <div class="bg" aria-hidden="true"><img src="assets/img/accueil/hero-qumran-grottes-960.jpg" alt="" loading="lazy"></div>
+        <span class="badge badge-live">Salle phare · 03</span>
+        <h3>1947, Qumrân : la nuit où tout a changé</h3>
+        <p>Dans une grotte au-dessus de la mer Morte, un jeune berger bédouin découvre des jarres scellées. À l'intérieur : des rouleaux vieux de plus de deux mille ans, dont un livre d'Ésaïe complet.</p>
+        <a class="btn btn-ghost" href="salles/03-qumran.html">Découvrir la salle {{ARROW}}</a>
+      </article>
+      <article class="une-card une-codexh" data-reveal="right">
+        <div class="bg" aria-hidden="true"><img src="assets/img/accueil/hero-labo-multispectral-960.jpg" alt="" loading="lazy"></div>
+        <span class="badge badge-live">Actualité · avril 2026</span>
+        <h3>Les 42 pages fantômes du Codex H</h3>
+        <p>Une équipe dirigée par le professeur Garrick Allen (Université de Glasgow) a restitué 42 pages perdues d'un manuscrit des Lettres de Paul du VIᵉ siècle, grâce à l'imagerie multispectrale.</p>
+        <a class="btn btn-ghost" href="salles/05-codex-h.html">Découvrir la salle {{ARROW}}</a>
+      </article>
+    </div>
+
+    <div class="center" style="margin-top:var(--s-8)">
+      {{VISITER}}
+    </div>
+  </div>
+</section>
+
+</main>

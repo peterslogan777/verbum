@@ -1,0 +1,265 @@
+
+<!-- =====================================================================
+     SALLE 08 — GUTENBERG ET L'IMPRIMERIE (étape E10)
+     I. L'atelier · II. À vous de composer · III. La Bible à 42 lignes
+     IV. La vague imprimée · V. Retour aux sources · VI. Le globe des traductions
+     ===================================================================== -->
+
+<nav class="s-sommaire" aria-label="Sommaire de la salle">
+  <div class="container">
+    <a href="#atelier"><span>I</span>L'atelier</a>
+    <a href="#composer"><span>II</span>À vous de composer</a>
+    <a href="#b42"><span>III</span>La Bible à 42 lignes</a>
+    <a href="#vague"><span>IV</span>La vague imprimée</a>
+    <a href="#sources"><span>V</span>Retour aux sources</a>
+    <a href="#globe"><span>VI</span>Le globe</a>
+  </div>
+</nav>
+
+<!-- ============ I. L'ATELIER ============ -->
+<section class="section s08-at" id="atelier" aria-labelledby="at-title">
+  <div class="container">
+    <div class="s-head">
+      <span class="kicker" data-reveal>Vitrine I · Mayence, vers 1450</span>
+      <h2 class="h-section" id="at-title" data-reveal>L'atelier de Mayence, <em>écrire sans plume</em></h2>
+      <p class="lead" data-reveal>Pendant deux mille ans, chaque Bible a été copiée à la main. Au milieu du XVe siècle, un orfèvre rhénan réunit quatre inventions en un seul procédé.</p>
+    </div>
+    <div class="at-intro" data-reveal>
+      <p class="drop">Johannes Gutenberg n'invente ni le papier, venu de Chine par le monde arabe, ni l'impression, connue en Asie depuis des siècles. Son génie est d'avoir réuni en un système complet des <b>caractères mobiles en métal</b>, coulés en série et parfaitement identiques, un <b>moule à main</b> pour les fabriquer, une <b>encre grasse</b> adaptée au métal et une <b>presse à vis</b>. Chaque lettre peut servir, être défaite, puis resservir à l'infini.</p>
+      <div class="compteurs at-cpt">
+        <div class="cpt"><span class="cpt-n"><span data-count="290">290</span></span><span class="cpt-l">caractères<small>dessinés pour la Bible</small></span></div>
+        <div class="cpt"><span class="cpt-n">≈ <span data-count="20">20</span></span><span class="cpt-l">ouvriers<small>dans l'atelier</small></span></div>
+        <div class="cpt"><span class="cpt-n">≈ <span data-count="3000">3000</span></span><span class="cpt-l">caractères<small>par page imprimée (estimation)</small></span></div>
+      </div>
+    </div>
+
+    <div class="et" data-reveal>
+      <div class="et-tabs" role="tablist" aria-label="Les étapes de l'impression">{{S08_ETAPES_NAV}}</div>
+      {{S08_ETAPES}}
+    </div>
+
+    <div class="s-audio" data-reveal>
+      <div class="audio-player" id="audio-gut" data-src="{{ROOT}}assets/audio/salle08-gutenberg.mp3">
+        <button class="ap-play" type="button" aria-label="Écouter la narration : l'atelier de Gutenberg">
+          <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>
+          <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+        </button>
+        <div class="ap-body">
+          <div class="ap-meta"><b>Écouter la narration · L'atelier de Gutenberg</b><span class="ap-time">0:00 / 1:13</span></div>
+          <canvas class="ap-viz" aria-hidden="true"></canvas>
+          <input class="ap-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Position de lecture">
+        </div>
+      </div>
+      <details class="transcript">
+        <summary>Lire la transcription</summary>
+        <div class="transcript-body">{{S08_TR_GUT}}</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ II. À VOUS DE COMPOSER ============ -->
+<section class="section s08-cp" id="composer" aria-labelledby="cp-title">
+  <div class="container">
+    <div class="s-head">
+      <span class="kicker" data-reveal>Vitrine II · Interactif</span>
+      <h2 class="h-section" id="cp-title" data-reveal>À vous de <em>composer</em></h2>
+      <p class="lead" data-reveal>Choisissez un mot latin, prenez les lettres dans la casse, encrez, puis tirez le barreau. Attention : sur le plomb, tout est à l'envers.</p>
+    </div>
+    <div class="cp" data-etat="compose" data-reveal>
+      <div class="cp-top">
+        {{S08_COMPO}}
+        <p class="cp-cible">Mot à composer : <b class="cp-mot">LUX</b> <span class="cp-fr"></span></p>
+      </div>
+      <div class="cp-zone">
+        <div class="cp-casse" role="group" aria-label="Casse : lettres de plomb (à l'envers)"></div>
+        <div class="cp-droite">
+          <div class="cp-stick-wrap">
+            <p class="cp-lab">Le composteur <small>(vu du dessus : lettres et ordre inversés)</small></p>
+            <div class="cp-stick" aria-live="polite"></div>
+          </div>
+          <div class="cp-presse" aria-hidden="true">
+            <div class="cp-platine"></div>
+            <div class="cp-feuille"><span class="cp-imprime"></span></div>
+          </div>
+          <div class="cp-actions">
+            <button type="button" class="btn btn-ghost btn-sm cp-annuler">Retirer la dernière lettre</button>
+            <button type="button" class="btn btn-ghost btn-sm cp-encrer" disabled>Encrer</button>
+            <button type="button" class="btn btn-or btn-sm cp-presser" disabled>Tirer le barreau</button>
+          </div>
+          <p class="cp-msg" role="status">Cliquez sur les lettres de la casse, dans l'ordre du mot.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ III. LA BIBLE À 42 LIGNES ============ -->
+<section class="section s08-b42" id="b42" aria-labelledby="b42-title">
+  <div class="container">
+    <div class="s-head">
+      <span class="kicker" data-reveal>Vitrine III · Mayence, vers 1455</span>
+      <h2 class="h-section" id="b42-title" data-reveal>La Bible à 42 lignes, <em>le premier grand livre imprimé</em></h2>
+      <p class="lead" data-reveal>Le premier ouvrage d'envergure sorti d'une presse européenne est une Bible : la Vulgate de Jérôme, imprimée avec une beauté égale à celle des plus beaux manuscrits.</p>
+    </div>
+    <div class="b42-grid">
+      <figure class="s08-fig" data-reveal="left">
+        <img src="{{ROOT}}assets/img/salles/08/b42-960.jpg" srcset="{{ROOT}}assets/img/salles/08/b42-960.jpg 960w, {{ROOT}}assets/img/salles/08/b42.jpg 1920w" sizes="(max-width: 1000px) 100vw, 55vw"
+             alt="Une Bible imprimée du XVe siècle ouverte dans une vitrine : deux colonnes de texte gothique par page, titres rouges, grande initiale peinte et marges ornées de fleurs et d'oiseaux" loading="lazy" decoding="async"
+             data-lightbox data-full="{{ROOT}}assets/img/salles/08/b42.jpg" data-caption="Une Bible de Gutenberg en vitrine. Reconstitution numérique.">
+        <figcaption><span class="tag">Reconstitution</span> Texte imprimé, titres et ornements ajoutés à la main : chaque exemplaire est unique.</figcaption>
+      </figure>
+      <div data-reveal="right">
+        <div class="compteurs b42-cpt">
+          <div class="cpt"><span class="cpt-n">≈ <span data-count="180">180</span></span><span class="cpt-l">exemplaires<small>imprimés vers 1455</small></span></div>
+          <div class="cpt"><span class="cpt-n"><span data-count="49">49</span></span><span class="cpt-l">conservés<small>complets ou presque</small></span></div>
+          <div class="cpt"><span class="cpt-n"><span data-count="1282">1282</span></span><span class="cpt-l">pages<small>en deux volumes</small></span></div>
+        </div>
+        <blockquote class="q-heb q-fr">
+          <p class="qf">« Les lettres en sont très nettes et très correctes, sans aucune faute : Votre Grâce les lirait sans effort et sans lunettes. »</p>
+          <cite>Enea Silvio Piccolomini, futur pape Pie II, lettre du 12 mars 1455</cite>
+        </blockquote>
+        <p class="b42-p">Piccolomini a vu des cahiers de cette Bible à Francfort. C'est sa lettre qui nous apprend le tirage : environ <b>180 exemplaires</b>, dont une partie sur <b>vélin</b> (parchemin de veau) et la plupart sur <b>papier</b> importé d'Italie. Parmi les 49 exemplaires conservés, 12 sont sur vélin et 37 sur papier. La France en possède trois : deux à la Bibliothèque nationale de France et un à la bibliothèque Mazarine, d'où le surnom de « Bible Mazarine ».</p>
+        <div class="b42-links">
+          <a class="btn btn-ghost btn-sm" href="https://www.loc.gov/item/2021666734/" target="_blank" rel="noopener">Voir l'original · exemplaire de Munich numérisé {{ARROW}}</a>
+          <a class="btn btn-ghost btn-sm" href="https://www.gutenbergdigital.de/" target="_blank" rel="noopener">Voir l'original · Gutenberg Digital, Göttingen {{ARROW}}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="fac" data-reveal>
+      <div class="fac-head">
+        <h3 class="sub-title">Anatomie d'une page</h3>
+        <p>Cliquez sur les pastilles numérotées pour explorer la mise en page de Gutenberg. <span class="tag">Reconstitution</span> Page d'inspiration B42 composée en police textura moderne (UnifrakturMaguntia), avec le texte de la Vulgate en graphie médiévale ; ce n'est pas un fac-similé.</p>
+      </div>
+      <div class="fac-grid">
+        {{S08_FAC}}
+        <div class="fac-side">
+          <div class="fac-info" aria-live="polite">{{S08_FAC_INFO}}</div>
+          <details class="fac-trad">
+            <summary>Lire la traduction française</summary>
+            <p><span class="badge badge-canon">Canonique</span> {{S08_FAC_FR}}</p>
+            <p class="fac-rub-fr">Titre rouge : « Ici commence le livre Bereshit, que nous appelons Genèse. » Bereshit (בְּרֵאשִׁית, « au commencement ») est le premier mot et le nom hébreu du livre.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-title vie-title" data-reveal>La vie de Gutenberg</h3>
+    <ol class="vie">{{S08_VIE}}</ol>
+  </div>
+</section>
+
+<!-- ============ IV. LA VAGUE IMPRIMÉE ============ -->
+<section class="section s08-vq" id="vague" aria-labelledby="vq-title">
+  <div class="container">
+    <div class="s-head">
+      <span class="kicker" data-reveal>Vitrine IV · Carte interactive, 1455-1611</span>
+      <h2 class="h-section" id="vq-title" data-reveal>La vague imprimée, <em>une Bible par langue</em></h2>
+      <p class="lead" data-reveal>En un siècle et demi, la Bible imprimée gagne toute l'Europe. Faites glisser le curseur ou lancez l'animation.</p>
+    </div>
+    <div class="vq" data-reveal>
+      <div class="vq-map">
+        <canvas class="vq-canvas" role="img" aria-label="Carte de l'Europe : lieux d'impression des premières Bibles par langue"></canvas>
+        <div class="vq-an" aria-hidden="true">1455</div>
+      </div>
+      <div class="vq-ctrl">
+        <button type="button" class="vq-play" aria-label="Lancer l'animation">
+          <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>
+          <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+        </button>
+        <input class="vq-range" type="range" min="1450" max="1615" value="1615" step="1" aria-label="Année">
+        <output class="vq-out">1615</output>
+      </div>
+      <p class="vq-count"><b class="vq-n">22</b> éditions · <b class="vq-ln">17</b> langues</p>
+      {{S08_VAGUE}}
+    </div>
+  </div>
+</section>
+
+<!-- ============ V. RETOUR AUX SOURCES ============ -->
+<section class="section s08-rf" id="sources" aria-labelledby="rf-title">
+  <div class="container">
+    <div class="s-head">
+      <span class="kicker" data-reveal>Vitrine V · XVe – XVIe siècle</span>
+      <h2 class="h-section" id="rf-title" data-reveal>Retour aux sources, <em>traduire pour tous</em></h2>
+      <p class="lead" data-reveal>Grâce à l'imprimerie, les savants disposent enfin des textes hébreu et grec imprimés, identiques d'un exemplaire à l'autre. Les traducteurs s'en emparent pour mettre la Bible dans la langue du peuple.</p>
+    </div>
+    <div class="rf-duo">
+      <figure class="s08-fig" data-reveal="left">
+        <img src="{{ROOT}}assets/img/salles/08/erasme-960.jpg" srcset="{{ROOT}}assets/img/salles/08/erasme-960.jpg 960w, {{ROOT}}assets/img/salles/08/erasme.jpg 1920w" sizes="(max-width: 1000px) 100vw, 50vw"
+             alt="Un savant en robe bordée de fourrure et bonnet noir corrige des épreuves imprimées à côté d'un imprimeur en tablier, dans un atelier de la Renaissance" loading="lazy" decoding="async"
+             data-lightbox data-full="{{ROOT}}assets/img/salles/08/erasme.jpg" data-caption="Bâle, 1516 : un humaniste corrige les épreuves du Nouveau Testament grec. Reconstitution numérique.">
+        <figcaption><span class="tag">Reconstitution</span> Bâle, 1516 : relire les épreuves du Nouveau Testament grec.</figcaption>
+      </figure>
+      <figure class="s08-fig" data-reveal="right">
+        <img src="{{ROOT}}assets/img/salles/08/tyndale-960.jpg" srcset="{{ROOT}}assets/img/salles/08/tyndale-960.jpg 960w, {{ROOT}}assets/img/salles/08/tyndale.jpg 1920w" sizes="(max-width: 1000px) 100vw, 50vw"
+             alt="De nuit, sur un quai pavé et mouillé, deux hommes en cape glissent de petits livres dans un ballot de tissu, à la lueur d'une lanterne" loading="lazy" decoding="async"
+             data-lightbox data-full="{{ROOT}}assets/img/salles/08/tyndale.jpg" data-caption="Anvers, vers 1526 : des Nouveaux Testaments cachés dans des ballots de tissu. Reconstitution numérique.">
+        <figcaption><span class="tag">Reconstitution</span> Anvers : des Nouveaux Testaments anglais cachés dans des ballots de tissu.</figcaption>
+      </figure>
+    </div>
+    <div class="rf-grid">{{S08_REFORME}}</div>
+
+    <div class="s-audio" data-reveal>
+      <div class="audio-player" id="audio-dif" data-src="{{ROOT}}assets/audio/salle08-diffusion.mp3">
+        <button class="ap-play" type="button" aria-label="Écouter la narration : de Mayence au monde entier">
+          <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>
+          <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+        </button>
+        <div class="ap-body">
+          <div class="ap-meta"><b>Écouter la narration · De Mayence au monde</b><span class="ap-time">0:00 / 1:22</span></div>
+          <canvas class="ap-viz" aria-hidden="true"></canvas>
+          <input class="ap-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Position de lecture">
+        </div>
+      </div>
+      <details class="transcript">
+        <summary>Lire la transcription</summary>
+        <div class="transcript-body">{{S08_TR_DIF}}</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VI. LE GLOBE DES TRADUCTIONS ============ -->
+<section class="section s08-gl" id="globe" aria-labelledby="gl-title">
+  <div class="s08-band" aria-hidden="true">
+    <img src="{{ROOT}}assets/img/salles/08/globe-960.jpg" srcset="{{ROOT}}assets/img/salles/08/globe-960.jpg 960w, {{ROOT}}assets/img/salles/08/globe.jpg 1920w" sizes="100vw" alt="" loading="lazy" decoding="async">
+  </div>
+  <div class="container">
+    <div class="s-head">
+      <span class="kicker" data-reveal>Vitrine VI · Aujourd'hui</span>
+      <h2 class="h-section" id="gl-title" data-reveal>Le globe <em>des traductions</em></h2>
+      <p class="lead" data-reveal>Cinq siècles et demi après Gutenberg, la Bible est le livre le plus traduit de l'histoire. Et le travail continue chaque jour.</p>
+    </div>
+    <div class="gl-grid">
+      <div class="gl-globe" data-reveal="left">
+        <canvas class="gl-canvas" role="img" aria-label="Globe terrestre en rotation"></canvas>
+        <p class="gl-hint">Faites glisser pour tourner le globe</p>
+      </div>
+      <div data-reveal="right">
+        <div class="compteurs gl-cpt">
+          <div class="cpt"><span class="cpt-n"><span data-count="807">807</span></span><span class="cpt-l">langues<small>ont la Bible complète</small></span></div>
+          <div class="cpt"><span class="cpt-n"><span data-count="4170">4170</span></span><span class="cpt-l">langues<small>ont au moins une partie de la Bible</small></span></div>
+          <div class="cpt"><span class="cpt-n"><span data-count="4414">4414</span></span><span class="cpt-l">langues<small>où une traduction est en cours</small></span></div>
+        </div>
+        <h3 class="sub-title gl-sub">Les 7 394 langues du monde</h3>
+        {{S08_LANGUES}}
+        <p class="gl-note"><b>6,3 milliards</b> de personnes peuvent lire la Bible complète dans leur première langue. Un humain sur cinq attend encore la Bible entière dans la sienne. <span class="tag">Source</span> ProgressBible, chiffres de septembre 2026 publiés par Wycliffe.</p>
+      </div>
+    </div>
+    <figure class="s08-fig gl-fig" data-reveal>
+      <img src="{{ROOT}}assets/img/salles/08/traducteurs-960.jpg" srcset="{{ROOT}}assets/img/salles/08/traducteurs-960.jpg 960w, {{ROOT}}assets/img/salles/08/traducteurs.jpg 1920w" sizes="100vw"
+           alt="Sous un grand manguier, trois traducteurs africains travaillent autour d'une table avec un ordinateur portable et des pages annotées, tandis qu'un ancien du village donne son avis" loading="lazy" decoding="async"
+           data-lightbox data-full="{{ROOT}}assets/img/salles/08/traducteurs.jpg" data-caption="Une équipe de traduction aujourd'hui, en Afrique de l'Ouest. Reconstitution numérique.">
+      <figcaption><span class="tag">Reconstitution</span> Une équipe de traduction aujourd'hui : relecture avec les anciens du village.</figcaption>
+    </figure>
+
+    <div class="q-pont" data-reveal>
+      <span class="kicker">La suite du parcours</span>
+      <h3>Quand la pierre confirme le parchemin</h3>
+      <p>Des textes transmis fidèlement, oui. Mais les lieux, les rois et les peuples qu'ils nomment ont-ils existé ? La salle suivante interroge l'archéologie.</p>
+      <a class="btn btn-or" href="{{ROOT}}salles/09-archeologie.html">Salle 09 · Les Preuves archéologiques {{ARROW}}</a>
+    </div>
+  </div>
+</section>

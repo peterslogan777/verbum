@@ -1,0 +1,9 @@
+# VERBUM — en-têtes pour Netlify / Cloudflare Pages
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+/assets/*
+  Cache-Control: public, max-age=2592000
+/assets/audio/*
+  Cache-Control: public, max-age=2592000
+  Accept-Ranges: bytes

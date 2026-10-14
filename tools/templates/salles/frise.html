@@ -1,0 +1,217 @@
+
+<!-- =====================================================================
+     SALLE 11 — LA GRANDE FRISE CHRONOLOGIQUE (étape E13)
+     I. La frise · II. Les huit époques · III. L'écart · IV. Remettre dans l'ordre · V. Fin du parcours
+     ===================================================================== -->
+
+<nav class="s-sommaire" aria-label="Sommaire de la salle">
+  <div class="container">
+    <a href="#frise"><span>I</span>La frise</a>
+    <a href="#epoques"><span>II</span>Les huit époques</a>
+    <a href="#ecart"><span>III</span>L'écart</a>
+    <a href="#ordre"><span>IV</span>Remettre dans l'ordre</a>
+    <a href="#fin"><span>V</span>Fin du parcours</a>
+  </div>
+</nav>
+
+<!-- ============ I. LA FRISE ============ -->
+<section class="section s11-fr" id="frise" aria-labelledby="fr-title" data-root="{{ROOT}}">
+  <div class="container">
+    <div class="s-head">
+      <span class="kicker" data-reveal>Vitrine I · ≈ 1500 av. J.-C. – 2026</span>
+      <h2 class="h-section" id="fr-title" data-reveal>3 500 ans <em>d'un seul regard</em></h2>
+      <p class="lead" data-reveal>{{S11_NB}} jalons de la transmission de la Bible, de Moïse au Codex H. Faites glisser la frise, choisissez une époque ou une catégorie, puis ouvrez une fiche pour tout savoir.</p>
+    </div>
+
+    <div class="fr-ctrl" data-reveal>
+      {{S11_ERAS}}
+      {{S11_CATS}}
+    </div>
+  </div>
+
+  <div class="fr-stage" data-reveal>
+    <div class="container fr-mini-wrap">
+      {{S11_MINI}}
+    </div>
+    <div class="fr-viewport">
+      <button type="button" class="fr-nav fr-prev" aria-label="Défiler vers le passé"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="fr-track" tabindex="0" role="region" aria-label="Frise chronologique : utilisez les flèches gauche et droite pour défiler">
+        {{S11_RAIL}}
+      </div>
+      <button type="button" class="fr-nav fr-next" aria-label="Défiler vers le présent"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+    <p class="fr-hint container">Glissez avec la souris ou le doigt, utilisez la molette ou les flèches du clavier. Cliquez sur une carte pour ouvrir sa fiche.</p>
+  </div>
+
+  <div class="container">
+    <div class="s-audio" data-reveal>
+      <div class="audio-player" id="audio-frise" data-src="{{ROOT}}assets/audio/salle11-intro.mp3">
+        <button class="ap-play" type="button" aria-label="Écouter la narration : bienvenue dans la grande frise">
+          <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>
+          <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+        </button>
+        <div class="ap-body">
+          <div class="ap-meta"><b>Écouter la narration · Bienvenue dans la grande frise</b><span class="ap-time">0:00 / 1:27</span></div>
+          <canvas class="ap-viz" aria-hidden="true"></canvas>
+          <input class="ap-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Position de lecture">
+        </div>
+      </div>
+      <details class="transcript">
+        <summary>Lire la transcription</summary>
+        <div class="transcript-body">{{S11_TR_INTRO}}</div>
+      </details>
+    </div>
+  </div>
+  {{S11_DATA}}
+</section>
+
+<!-- Fiche détaillée (dialogue) -->
+<dialog class="fe" aria-labelledby="fe-title">
+  <div class="fe-in">
+    <button type="button" class="fe-close">Fermer <kbd>Échap</kbd></button>
+    <figure class="fe-fig"><img class="fe-img" src="" alt=""><figcaption class="fe-cap"><span class="tag">Illustration</span> <span class="fe-cap-t"></span></figcaption></figure>
+    <div class="fe-body">
+      <p class="fe-era"></p>
+      <p class="fe-y"></p>
+      <h2 class="fe-t" id="fe-title"></h2>
+      <p class="fe-meta"></p>
+      <p class="fe-txt"></p>
+      <div class="fe-imp"><b>Pour la transmission</b><p></p></div>
+      <div class="fe-acts">
+        <button type="button" class="btn btn-ghost fe-audio" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>
+          <span>Écouter le commentaire de l'époque</span>
+        </button>
+        <a class="btn btn-or fe-salle" href="#">Salle</a>
+        <a class="btn btn-ghost fe-url" href="#" target="_blank" rel="noopener" hidden>Voir l'original</a>
+      </div>
+      <div class="fe-nav">
+        <button type="button" class="fe-prev">← <span>Jalon précédent</span></button>
+        <span class="fe-pos" aria-live="polite"></span>
+        <button type="button" class="fe-next"><span>Jalon suivant</span> →</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- ============ II. LES HUIT ÉPOQUES ============ -->
+<section class="section s11-ep" id="epoques" aria-labelledby="ep-title">
+  <div class="container">
+    <div class="s-head">
+      <span class="kicker" data-reveal>Vitrine II · Le récit en huit époques</span>
+      <h2 class="h-section" id="ep-title" data-reveal>Huit époques, <em>un seul fil</em></h2>
+      <p class="lead" data-reveal>Chaque époque a ses artisans : rédacteurs, scribes, traducteurs, imprimeurs, archéologues. Écoutez leur histoire, puis retrouvez-la dans la frise.</p>
+    </div>
+    {{S11_EPOQUES}}
+
+    <div class="ep-audios">
+      <div class="s-audio" data-reveal>
+        <div class="audio-player" id="audio-origines" data-src="{{ROOT}}assets/audio/salle11-origines.mp3">
+          <button class="ap-play" type="button" aria-label="Écouter la narration : époques 1 et 2">
+            <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+          </button>
+          <div class="ap-body">
+            <div class="ap-meta"><b>Époques 1 et 2 · Des origines à Qumrân</b><span class="ap-time">0:00 / 1:40</span></div>
+            <canvas class="ap-viz" aria-hidden="true"></canvas>
+            <input class="ap-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Position de lecture">
+          </div>
+        </div>
+        <details class="transcript"><summary>Lire la transcription</summary><div class="transcript-body">{{S11_TR_ORIGINES}}</div></details>
+      </div>
+      <div class="s-audio" data-reveal>
+        <div class="audio-player" id="audio-codex" data-src="{{ROOT}}assets/audio/salle11-codex.mp3">
+          <button class="ap-play" type="button" aria-label="Écouter la narration : époques 3 et 4">
+            <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+          </button>
+          <div class="ap-body">
+            <div class="ap-meta"><b>Époques 3 et 4 · Des apôtres aux grands codex</b><span class="ap-time">0:00 / 1:40</span></div>
+            <canvas class="ap-viz" aria-hidden="true"></canvas>
+            <input class="ap-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Position de lecture">
+          </div>
+        </div>
+        <details class="transcript"><summary>Lire la transcription</summary><div class="transcript-body">{{S11_TR_CODEX}}</div></details>
+      </div>
+      <div class="s-audio" data-reveal>
+        <div class="audio-player" id="audio-copistes" data-src="{{ROOT}}assets/audio/salle11-copistes.mp3">
+          <button class="ap-play" type="button" aria-label="Écouter la narration : époques 5 et 6">
+            <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+          </button>
+          <div class="ap-body">
+            <div class="ap-meta"><b>Époques 5 et 6 · Des massorètes à la Bible du roi Jacques</b><span class="ap-time">0:00 / 1:38</span></div>
+            <canvas class="ap-viz" aria-hidden="true"></canvas>
+            <input class="ap-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Position de lecture">
+          </div>
+        </div>
+        <details class="transcript"><summary>Lire la transcription</summary><div class="transcript-body">{{S11_TR_COPISTES}}</div></details>
+      </div>
+      <div class="s-audio" data-reveal>
+        <div class="audio-player" id="audio-decouvertes" data-src="{{ROOT}}assets/audio/salle11-decouvertes.mp3">
+          <button class="ap-play" type="button" aria-label="Écouter la narration : époques 7 et 8">
+            <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+          </button>
+          <div class="ap-body">
+            <div class="ap-meta"><b>Époques 7 et 8 · Des découvertes à l'ère numérique</b><span class="ap-time">0:00 / 1:47</span></div>
+            <canvas class="ap-viz" aria-hidden="true"></canvas>
+            <input class="ap-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Position de lecture">
+          </div>
+        </div>
+        <details class="transcript"><summary>Lire la transcription</summary><div class="transcript-body">{{S11_TR_DECOUVERTES}}</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ III. L'ÉCART ============ -->
+<section class="section s11-ec" id="ecart" aria-labelledby="ec-title">
+  <div class="container">
+    <div class="s-head">
+      <span class="kicker" data-reveal>Vitrine III · Comparer avec les classiques</span>
+      <h2 class="h-section" id="ec-title" data-reveal>Le Nouveau Testament <em>face aux classiques</em></h2>
+      <p class="lead" data-reveal>Pour juger de la transmission d'un texte ancien, les historiens regardent deux choses : le temps écoulé entre sa rédaction et la plus ancienne copie conservée, et le nombre de manuscrits qui permettent de vérifier ce qu'il disait.</p>
+    </div>
+    {{S11_ECART}}
+    <p class="ec-note">Ordres de grandeur couramment cités ; ils varient selon les sources et selon que l'on compte les fragments ou seulement les copies complètes. Pour l'Ancien Testament, la découverte de Qumrân a fait reculer d'environ mille ans la plus ancienne copie du livre d'Ésaïe.</p>
+  </div>
+</section>
+
+<!-- ============ IV. REMETTRE DANS L'ORDRE ============ -->
+<section class="section s11-or" id="ordre" aria-labelledby="or-title">
+  <div class="container">
+    <div class="or-grid">
+      <div class="s-head" data-reveal="left">
+        <span class="kicker">Vitrine IV · À vous de jouer</span>
+        <h2 class="h-section" id="or-title">Remettre <em>dans l'ordre</em></h2>
+        <p class="lead">Six jalons sont mélangés. Classez-les du plus ancien au plus récent, puis vérifiez votre frise.</p>
+      </div>
+      <div class="or-game" data-reveal="right">
+        {{S11_ORDRE}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ V. FIN DU PARCOURS ============ -->
+<section class="section s11-fin" id="fin" aria-labelledby="fin-title">
+  <div class="container">
+    <figure class="fin-img" data-reveal>{{IMG_FIN}}</figure>
+    <div class="fin-txt" data-reveal>
+      <span class="kicker">Fin du parcours</span>
+      <h2 class="h-section" id="fin-title">La Parole qui traverse <em>les millénaires</em></h2>
+      <p class="lead">Des tablettes de pierre aux écrans, de Moïse aux laboratoires de Glasgow, le même texte a été copié, traduit, imprimé, caché, retrouvé et vérifié. Les manuscrits ne sont pas tous identiques, mais leurs différences, connues et étudiées, n'ont pas altéré le message : la Bible nous est parvenue pour l'essentiel intacte.</p>
+      <blockquote class="q-heb">
+        <p class="qh" lang="he" dir="rtl">נֵר־לְרַגְלִי דְבָרֶךָ וְאוֹר לִנְתִיבָתִי׃</p>
+        <p class="qf">« Ta parole est une lampe pour mon pied, et une lumière sur mon sentier. »</p>
+        <cite>Psaume 119:105 · hébreu · <span class="badge badge-canon">Canonique</span></cite>
+      </blockquote>
+      <div class="fin-acts">
+        <a class="btn btn-or" href="{{ROOT}}index.html">Retour au hall d'entrée {{ARROW}}</a>
+        <a class="btn btn-ghost" href="{{ROOT}}salles/12-bible-francaise.html">Dernière salle · La Bible en français</a>
+        <a class="btn btn-ghost" href="{{ROOT}}salles/01-origines.html">Recommencer la visite · Salle 01</a>
+      </div>
+    </div>
+  </div>
+</section>

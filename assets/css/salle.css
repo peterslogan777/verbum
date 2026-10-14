@@ -1,0 +1,96 @@
+/* =====================================================================
+   VERBUM — Gabarit des salles (galeries) — en-tête commun
+   ===================================================================== */
+.salle-hero { position: relative; min-height: 78svh; display: flex; align-items: flex-end; overflow: hidden; isolation: isolate; padding: 9rem 0 5rem; }
+.salle-hero .bg { position: absolute; inset: 0; z-index: -2; background:
+  radial-gradient(70% 60% at 75% 25%, var(--salle-glow, rgba(201, 168, 76, .28)), transparent 60%),
+  linear-gradient(180deg, #0D1B2A 0%, #0A0A0F 90%); }
+.salle-hero .bg-num { position: absolute; right: -2vw; bottom: -6vw; z-index: -1; font-family: var(--f-epi); font-size: 42vw; line-height: .8; color: transparent; -webkit-text-stroke: 1px rgba(201, 168, 76, .12); pointer-events: none; user-select: none; }
+.salle-hero .icon-xl { width: clamp(70px, 9vw, 120px); color: var(--or-sacre); margin-bottom: 1.6rem; opacity: .9; }
+.salle-hero h1 { font-family: var(--f-epi); font-weight: 400; font-size: clamp(2.4rem, 1.4rem + 4vw, 5.6rem); line-height: 1.02; max-width: 16ch; margin: .6rem 0 1rem; }
+.salle-hero .era { font-family: var(--f-ui); font-size: .8rem; letter-spacing: .25em; text-transform: uppercase; color: var(--or-sacre); }
+.salle-hero .lead { max-width: 58ch; }
+.salle-hero .badges { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1.6rem; }
+.programme { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 4vw, 4rem); }
+.programme h2 { font-size: var(--t-xl); margin-bottom: 1.2rem; }
+.programme ol { counter-reset: p; }
+.programme li { counter-increment: p; position: relative; padding: 1rem 0 1rem 3.2rem; border-bottom: 1px solid var(--line); color: var(--text-dim); }
+.programme li::before { content: counter(p, decimal-leading-zero); position: absolute; left: 0; top: 1.05rem; font-family: var(--f-cap); font-size: .8rem; color: var(--or-sacre); letter-spacing: .1em; }
+.programme li b { color: var(--blanc-parchemin); font-weight: 500; font-family: var(--f-titre); font-size: 1.15rem; display: block; }
+.atelier { padding: 2rem; border-radius: var(--radius-lg); border: 1px dashed var(--line-strong); background: rgba(201, 168, 76, .03); }
+.atelier p { color: var(--text-dim); margin-top: .8rem; }
+.salle-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: var(--s-8); padding-top: var(--s-5); border-top: 1px solid var(--line); }
+.salle-nav a { display: flex; flex-direction: column; gap: .3rem; max-width: 48%; }
+.salle-nav a:last-child { text-align: right; margin-left: auto; }
+.salle-nav small { font-family: var(--f-ui); font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--or-sacre); }
+.salle-nav span { font-family: var(--f-titre); font-size: 1.3rem; color: var(--blanc-parchemin); transition: color .3s; }
+.salle-nav a:hover span { color: var(--or-clair); }
+@media (max-width: 800px) { .programme { grid-template-columns: 1fr; } }
+
+/* ---------- En-tête de salle avec image ---------- */
+.salle-hero.has-img .bg img { position: absolute; inset: -4% 0 0; width: 100%; height: 108%; object-fit: cover; z-index: -1; transform: scale(1.08); animation: hero-in 2.4s var(--ease-out) both; }
+.salle-hero.has-img .bg::after { content: ""; position: absolute; inset: 0; background:
+  radial-gradient(80% 70% at 75% 20%, transparent 0%, rgba(10, 10, 15, .35) 70%),
+  linear-gradient(180deg, rgba(10, 10, 15, .55) 0%, rgba(10, 10, 15, .15) 35%, rgba(10, 10, 15, .75) 75%, #0A0A0F 100%),
+  linear-gradient(90deg, rgba(10, 10, 15, .75) 0%, transparent 60%); }
+.salle-hero.has-img .bg { background: #0A0A0F; }
+.salle-hero.has-img .bg-num { -webkit-text-stroke-color: rgba(230, 204, 122, .18); }
+@keyframes hero-in { from { opacity: 0; filter: blur(8px) brightness(.6); } }
+
+/* ---------- Éléments communs aux salles ouvertes ---------- */
+.s-sommaire { position: sticky; top: 0; z-index: 20; border-block: 1px solid var(--line); background: rgba(10, 10, 15, .82); backdrop-filter: blur(14px); }
+.s-sommaire .container { display: flex; gap: .4rem; overflow-x: auto; scrollbar-width: none; padding-block: .55rem; }
+.s-sommaire a { flex: none; display: inline-flex; align-items: center; gap: .6rem; padding: .55rem 1rem; border-radius: 999px; font-family: var(--f-ui); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); transition: color .3s, background .3s; }
+.s-sommaire a span { font-family: var(--f-cap); color: var(--or-sacre); letter-spacing: .05em; }
+.s-sommaire a:hover, .s-sommaire a.is-active { color: var(--blanc-parchemin); background: rgba(201, 168, 76, .1); }
+.s-head { max-width: 760px; margin-bottom: var(--s-7); }
+.s-head.center { margin-inline: auto; text-align: center; }
+.s-head .badges { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.2rem; }
+.s-head.center .badges { justify-content: center; }
+.sub-title { font-family: var(--f-titre); font-weight: 500; font-size: var(--t-xl); margin: var(--s-8) 0 var(--s-5); }
+.sub-title em { font-size: .55em; font-style: normal; font-family: var(--f-ui); letter-spacing: .18em; text-transform: uppercase; color: var(--text-mute); vertical-align: middle; }
+.drop::first-letter { float: left; font-family: var(--f-epi); font-size: 3.6em; line-height: .85; padding: .08em .12em 0 0; color: var(--or-sacre); }
+.tag { display: inline-block; margin-right: .5em; padding: .15em .6em; border-radius: 4px; font-family: var(--f-ui); font-style: normal; font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: var(--or-clair); border: 1px solid var(--line-strong); vertical-align: .15em; }
+figure img { display: block; width: 100%; height: auto; }
+figure figcaption { margin-top: .8rem; font-size: .95rem; color: var(--text-mute); font-style: italic; }
+.s-audio { margin-top: var(--s-8); }
+
+/* ---------- Composants partagés : fiche, sélecteur segmenté, encadré de débat ---------- */
+/* --- Fiche d'identité --- */
+.fiche { margin-top: var(--s-8); padding: clamp(1.4rem, 3vw, 2.4rem); border-radius: var(--radius-lg); border: 1px solid var(--line-strong);
+  background: linear-gradient(160deg, rgba(201, 168, 76, .07), rgba(13, 27, 42, .5)); position: relative; overflow: hidden; }
+.fiche::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent 0 38px, rgba(201, 168, 76, .04) 38px 39px); pointer-events: none; }
+.fiche-title { font-family: var(--f-cap); font-size: .85rem; letter-spacing: .3em; text-transform: uppercase; color: var(--or-sacre); margin-bottom: 1.2rem; }
+.fiche dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem 2rem; margin-bottom: 1.6rem; }
+.fiche dt { font-family: var(--f-ui); font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--text-mute); margin-bottom: .25rem; }
+.fiche dd { font-family: var(--f-titre); font-size: 1.15rem; color: var(--blanc-parchemin); line-height: 1.35; }
+.seg { display: inline-flex; flex-wrap: wrap; gap: .3rem; padding: .3rem; border-radius: 16px; border: 1px solid var(--line); background: rgba(255, 255, 255, .02); }
+.seg button { padding: .55rem 1rem; border-radius: 12px; font-family: var(--f-ui); font-size: .78rem; color: var(--text-dim); text-align: left; line-height: 1.25; transition: background .3s, color .3s; }
+.seg button small { display: block; font-size: .62rem; letter-spacing: .08em; color: var(--text-mute); }
+.seg button[aria-checked="true"] { background: var(--grad-or); background-size: 200% auto; color: #17130a; }
+.seg button[aria-checked="true"] small { color: rgba(23, 19, 10, .7); }
+/* --- Débat --- */
+.debat { display: flex; gap: 1.4rem; align-items: flex-start; margin-top: var(--s-7); padding: 1.5rem 1.8rem; border-radius: var(--radius); border: 1px dashed rgba(235, 178, 106, .45); background: rgba(190, 120, 40, .06); }
+.debat h3 { font-family: var(--f-titre); font-size: 1.35rem; font-weight: 500; margin-bottom: .4rem; }
+.debat p { color: var(--text-dim); font-size: 1rem; }
+.debat b { color: var(--blanc-parchemin); font-weight: 500; }
+@media (max-width: 1100px) { .fiche dl { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .fiche dl { grid-template-columns: 1fr; } .debat { flex-direction: column; } }
+
+/* --- Pont vers la salle suivante (salles 03 et suivantes) --- */
+.q-pont { margin-top: var(--s-8); padding: clamp(1.6rem, 4vw, 3rem); border-radius: var(--radius-lg); text-align: center; background: radial-gradient(70% 90% at 50% 100%, rgba(230, 190, 110, .2), transparent 70%), linear-gradient(180deg, rgba(13, 27, 42, .7), rgba(10, 10, 15, .9)); border: 1px solid var(--line-strong); }
+.q-pont h3 { font-family: var(--f-titre); font-size: var(--t-xl); font-weight: 500; margin: .4rem 0 .8rem; }
+.q-pont p { color: var(--text-dim); max-width: 62ch; margin: 0 auto 1.6rem; }
+
+/* --- Composants partagés : citation hébraïque, compteurs (déplacés depuis salle02.css) --- */
+.q-heb { margin-bottom: 1.6rem; padding: 1.2rem 1.4rem; border-left: 2px solid var(--or-sacre); background: rgba(201, 168, 76, .05); border-radius: 0 var(--radius) var(--radius) 0; }
+.q-heb .qh { font-family: var(--f-hebreu) !important; font-size: clamp(1.35rem, 1.1rem + 1vw, 1.8rem); color: var(--or-clair) !important; line-height: 1.5; margin: 0 !important; }
+.q-heb .qf { font-family: var(--f-titre); font-style: italic; font-size: 1.2rem; color: var(--parchemin) !important; margin: .5rem 0 .3rem !important; }
+.q-heb cite { font-family: var(--f-ui); font-style: normal; font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--or-sacre); }
+.compteurs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.cpt { text-align: center; padding: 1.6rem 1rem; border-radius: var(--radius); border: 1px solid var(--line); background: rgba(255, 255, 255, .02); }
+.cpt-n { display: block; font-family: var(--f-epi); font-size: clamp(2rem, 1.3rem + 2.4vw, 3.4rem); color: var(--or-clair); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.cpt-l { display: block; margin-top: .4rem; font-family: var(--f-ui); font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; color: var(--text-dim); }
+.cpt-l small { display: block; letter-spacing: .04em; text-transform: none; color: var(--text-mute); font-size: .7rem; margin-top: .2rem; }
+.cpt-note { margin-top: 1rem; font-size: .92rem; color: var(--text-mute); text-align: center; }
+@media (max-width: 900px) { .compteurs { grid-template-columns: repeat(2, 1fr); } }

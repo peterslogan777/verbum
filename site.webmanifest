@@ -1,0 +1,24 @@
+{
+  "name": "VERBUM — Musée Virtuel de la Bible",
+  "short_name": "VERBUM",
+  "description": "Musée virtuel immersif consacré à l'histoire de la Bible : manuscrits, copistes, manuscrits de la mer Morte, grands codex, imprimerie et découvertes récentes.",
+  "lang": "fr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0A0A0F",
+  "theme_color": "#0A0A0F",
+  "icons": [
+    {
+      "src": "apple-touch-icon.jpg",
+      "sizes": "180x180",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "assets/img/icon-512.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}

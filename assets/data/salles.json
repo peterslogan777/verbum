@@ -1,0 +1,110 @@
+[
+  {
+    "num": "01",
+    "slug": "origines",
+    "titre": "Les Origines",
+    "sous": "Moïse et les premiers textes",
+    "era": "≈ 1500 – 500 av. J.-C.",
+    "etape": "E03",
+    "href": "salles/01-origines.html"
+  },
+  {
+    "num": "02",
+    "slug": "copistes",
+    "titre": "Les Copistes et les Massorètes",
+    "sous": "Gardiens de chaque lettre",
+    "era": "Ve s. av. J.-C. – 1008 ap. J.-C.",
+    "etape": "E04",
+    "href": "salles/02-copistes.html"
+  },
+  {
+    "num": "03",
+    "slug": "qumran",
+    "titre": "Les Manuscrits de la mer Morte",
+    "sous": "La grande découverte de Qumrân",
+    "era": "IIIe s. av. J.-C. – Ier s. ap. J.-C. · découverts en 1947",
+    "etape": "E05",
+    "href": "salles/03-qumran.html"
+  },
+  {
+    "num": "04",
+    "slug": "codex-grecs",
+    "titre": "Les Grands Codex grecs",
+    "sous": "Les premiers témoins du Nouveau Testament",
+    "era": "IIe – Ve siècle ap. J.-C.",
+    "etape": "E06",
+    "href": "salles/04-codex-grecs.html"
+  },
+  {
+    "num": "05",
+    "slug": "codex-h",
+    "titre": "Découverte 2026 : le Codex H",
+    "sous": "Les pages fantômes des Lettres de Paul",
+    "era": "VIe siècle · restitué en 2026",
+    "etape": "E07",
+    "href": "salles/05-codex-h.html"
+  },
+  {
+    "num": "06",
+    "slug": "apocryphes",
+    "titre": "Les Textes apocryphes",
+    "sous": "Ce qui n'est pas dans le canon, et pourquoi",
+    "era": "IIIe s. av. J.-C. – IVe s. ap. J.-C.",
+    "etape": "E08",
+    "href": "salles/06-apocryphes.html"
+  },
+  {
+    "num": "07",
+    "slug": "traductions",
+    "titre": "La Septante et les grandes traductions",
+    "sous": "De l'hébreu au grec, au latin, au syriaque",
+    "era": "IIIe s. av. J.-C. – Ve s. ap. J.-C.",
+    "etape": "E09",
+    "href": "salles/07-traductions.html"
+  },
+  {
+    "num": "08",
+    "slug": "gutenberg",
+    "titre": "Gutenberg et l'imprimerie",
+    "sous": "La révolution de 1455",
+    "era": "XVe siècle – aujourd'hui",
+    "etape": "E10",
+    "href": "salles/08-gutenberg.html"
+  },
+  {
+    "num": "09",
+    "slug": "archeologie",
+    "titre": "Les Preuves archéologiques",
+    "sous": "Quand la terre confirme l'Écriture",
+    "era": "IXe s. av. J.-C. – Ier s. ap. J.-C.",
+    "etape": "E11",
+    "href": "salles/09-archeologie.html"
+  },
+  {
+    "num": "10",
+    "slug": "indestructible",
+    "titre": "Le Livre indestructible",
+    "sous": "La Bible face à ses destructeurs",
+    "era": "303 ap. J.-C. – XXe siècle",
+    "etape": "E12",
+    "href": "salles/10-indestructible.html"
+  },
+  {
+    "num": "11",
+    "slug": "frise",
+    "titre": "La Grande Frise chronologique",
+    "sous": "3 500 ans de transmission",
+    "era": "≈ 1500 av. J.-C. – 2026",
+    "etape": "E13",
+    "href": "salles/11-frise.html"
+  },
+  {
+    "num": "12",
+    "slug": "bible-francaise",
+    "titre": "La Bible en français",
+    "sous": "D'Olivétan à nos jours",
+    "era": "XIIe siècle – 2026",
+    "etape": "E15",
+    "href": "salles/12-bible-francaise.html"
+  }
+]

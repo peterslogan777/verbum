@@ -1,0 +1,158 @@
+/* =====================================================================
+   VERBUM — Salle 07 · La Septante et les grandes traductions (E09)
+   ===================================================================== */
+:root { --bleu-s7: #6ea0c8; --bleu-s7-c: #a9cbe6; }
+
+.syr, [lang="syc"] { font-family: 'Noto Sans Syriac', var(--f-hebreu-sans), sans-serif; }
+[lang="la"] { font-family: var(--f-titre); }
+
+.s07-fig { margin: 0; }
+.s07-fig img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid var(--line); box-shadow: var(--shadow-card); cursor: zoom-in; }
+.s07-fig figcaption { margin-top: .7rem; font-size: var(--t-sm); color: var(--text-mute); }
+
+/* --- I. Septante --- */
+.lxx-grid, .vg-grid, .am-grid, .pe-grid, .ag-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.lxx-text p, .vg-grid p, .pe-grid p, .ag-grid p { color: var(--text-dim); }
+.lxx-text p b, .vg-grid p b, .pe-grid p b, .ag-grid p b { color: var(--blanc-parchemin); font-weight: 600; }
+.lxx-cpt, .am-cpt { margin-top: var(--s-6); grid-template-columns: repeat(3, 1fr); }
+
+.lg-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: var(--s-8); }
+.lg { position: relative; padding: 1.6rem 1.8rem; border-radius: var(--radius-lg); border: 1px solid var(--line); background: linear-gradient(160deg, rgba(110, 160, 200, .07), rgba(255, 255, 255, .01)); overflow: hidden; }
+.lg.is-leg { background: linear-gradient(160deg, rgba(201, 168, 76, .09), rgba(255, 255, 255, .01)); }
+.lg h3 { font-family: var(--f-titre); font-size: var(--t-xl); font-weight: 500; margin: .8rem 0 .5rem; line-height: 1.15; }
+.lg p { color: var(--text-dim); margin: 0; }
+.lg p b { color: var(--blanc-parchemin); }
+.lg.is-leg::after { content: "72"; position: absolute; right: -.1em; bottom: -.32em; font-family: var(--f-titre); font-size: 9rem; line-height: 1; color: rgba(201, 168, 76, .07); pointer-events: none; }
+
+.lxx-fiche .fiche-note, .fiche-note { margin: 0; color: var(--text-dim); font-style: italic; font-family: var(--f-titre); font-size: 1.12rem; }
+
+.deutero { display: flex; gap: 1.4rem; align-items: flex-start; margin-top: var(--s-7); padding: 1.5rem 1.8rem; border-radius: var(--radius); border: 1px solid rgba(139, 26, 26, .45); background: rgba(139, 26, 26, .08); }
+.deutero h3 { font-family: var(--f-titre); font-size: 1.35rem; font-weight: 500; margin-bottom: .4rem; }
+.deutero p { margin: 0; color: var(--text-dim); }
+.deutero .badge { flex: none; margin-top: .3rem; }
+
+/* --- II. Nom divin --- */
+.nd-wrap { padding: clamp(1.4rem, 4vw, 3rem); border-radius: var(--radius-lg); border: 1px solid var(--line-strong); background: radial-gradient(ellipse at 50% 0%, rgba(201, 168, 76, .10), transparent 70%), rgba(10, 10, 15, .5); text-align: center; }
+.nd-line { font-family: var(--f-grec); font-size: clamp(1.4rem, 1rem + 1.8vw, 2.4rem); line-height: 1.6; color: var(--blanc-parchemin); margin: 0 0 .6rem; }
+.nd-nom { display: inline-grid; place-items: center; min-width: 4.6em; padding: 0 .2em; border-bottom: 2px solid var(--or-sacre); color: var(--or-clair); vertical-align: baseline; }
+.nd-nom > * { grid-area: 1 / 1; transition: opacity .5s var(--ease-out), filter .5s; opacity: 0; filter: blur(6px); }
+.nd-h { font-family: var(--f-hebreu); font-size: 1.1em; }
+.nd-p { font-family: 'Noto Sans Phoenician', var(--f-hebreu); font-size: .95em; letter-spacing: .05em; }
+.nd-stage[data-etat="kyrios"] .nd-k, .nd-stage[data-etat="carre"] .nd-h, .nd-stage[data-etat="paleo"] .nd-p { opacity: 1; filter: none; }
+.nd-fr { font-family: var(--f-titre); font-style: italic; font-size: 1.2rem; color: var(--parchemin); margin: 0 0 1.6rem; }
+.nd-seg { justify-content: center; }
+.nd-seg button { max-width: 17rem; }
+.nd-legende { margin: 1.4rem auto 0; max-width: 60ch; font-size: var(--t-sm); color: var(--text-mute); }
+.nd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: var(--s-7); }
+.nd-c { padding: 1.5rem 1.7rem; border-radius: var(--radius); border: 1px solid var(--line); background: rgba(255, 255, 255, .02); }
+.nd-c h3 { font-family: var(--f-titre); font-size: var(--t-xl); font-weight: 500; margin-bottom: .5rem; }
+.nd-c p { color: var(--text-dim); margin: 0; }
+.nd-c b { color: var(--blanc-parchemin); }
+
+/* --- III. Vulgate --- */
+.q-lat .qh { font-family: var(--f-titre) !important; font-style: italic; letter-spacing: .02em; }
+.vg-title { margin-top: var(--s-9); }
+.vg { list-style: none; padding: 0; margin: var(--s-5) 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
+.vg li { position: relative; padding: 1.3rem 1.3rem 1.4rem; background: var(--bg); }
+.vg li::before { content: ""; position: absolute; left: 1.3rem; top: 0; width: 2.2rem; height: 2px; background: var(--grad-or); }
+.vg-d { display: block; font-family: var(--f-titre); font-size: var(--t-xl); color: var(--or-clair); line-height: 1.1; }
+.vg h4 { font-family: var(--f-ui); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--blanc-parchemin); margin: .5rem 0 .4rem; font-weight: 600; }
+.vg p { margin: 0; font-size: var(--t-sm); color: var(--text-dim); line-height: 1.5; }
+.am-grid { margin-top: var(--s-9); }
+.am-fiche { margin-top: 0; }
+.am-fiche dl, .pe-fiche dl { grid-template-columns: repeat(2, 1fr); }
+
+/* --- IV. Peshitta --- */
+.pe-grid { grid-template-columns: 1fr 1fr; }
+.pe-fiche { margin-top: var(--s-6); }
+.pe-grid .syr { font-size: 1.15em; color: var(--or-clair); }
+.nt { margin-top: var(--s-9); padding: clamp(1.2rem, 3vw, 2.2rem); border-radius: var(--radius-lg); border: 1px solid var(--line); background: rgba(13, 27, 42, .45); }
+.nt-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 1.2rem; margin-bottom: 1.4rem; }
+.nt-head > div:first-child { max-width: 60ch; }
+.nt-head p { color: var(--text-dim); margin: .4rem 0 0; }
+.nt-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); gap: .5rem; }
+.nt-grid li { position: relative; padding: .7rem .8rem; border-radius: 10px; border: 1px solid rgba(110, 160, 200, .28); background: rgba(110, 160, 200, .08); font-family: var(--f-titre); font-size: 1.05rem; color: var(--blanc-parchemin); transition: opacity .45s, background .45s, border-color .45s, color .45s; }
+.nt[data-mode="peshitta"] .nt-grid li.is-abs { opacity: .38; background: transparent; border-style: dashed; border-color: var(--line-strong); color: var(--text-mute); }
+.nt[data-mode="peshitta"] .nt-grid li.is-abs::after { content: "ajouté en 508 / 616"; display: block; font-family: var(--f-ui); font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: var(--or-sacre); margin-top: .15rem; }
+.nt-note { margin: 1.2rem 0 0; font-size: var(--t-sm); color: var(--text-dim); display: flex; gap: .7rem; align-items: center; flex-wrap: wrap; }
+
+/* --- V. Polyglotte --- */
+.s07-pg { position: relative; overflow: hidden; }
+.s07-band { position: absolute; inset: 0 0 auto; height: 420px; z-index: 0; }
+.s07-band img { width: 100%; height: 100%; object-fit: cover; opacity: .28; -webkit-mask-image: linear-gradient(#000 30%, transparent); mask-image: linear-gradient(#000 30%, transparent); }
+.s07-pg .container { position: relative; z-index: 1; }
+.pg { border-radius: var(--radius-lg); border: 1px solid var(--line-strong); background: rgba(10, 10, 15, .82); backdrop-filter: blur(8px); overflow: hidden; }
+.pg-tabs { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--line); }
+.pg-tabs button { padding: 1rem; border: 0; background: transparent; color: var(--text-dim); font: inherit; display: grid; gap: .15rem; text-align: center; border-bottom: 2px solid transparent; transition: color .3s, background .3s, border-color .3s; cursor: pointer; }
+.pg-tabs button b { font-family: var(--f-titre); font-size: var(--t-lg); font-weight: 500; }
+.pg-tabs button small { font-family: var(--f-ui); font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: var(--bleu-s7); }
+.pg-tabs button:hover { color: var(--blanc-parchemin); background: rgba(255, 255, 255, .02); }
+.pg-tabs button[aria-selected="true"] { color: var(--blanc-parchemin); border-bottom-color: var(--or-sacre); background: rgba(201, 168, 76, .08); }
+.pg-panel { padding: clamp(1rem, 3vw, 2rem); animation: s7In .45s var(--ease-out); }
+@keyframes s7In { from { opacity: 0; } }
+.pg-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.pg-col, .pg-fr { padding: 1.1rem 1.3rem 1.2rem; background: #0c0c12; }
+.pg-h { display: flex; align-items: baseline; gap: .6rem; margin: 0 0 .6rem; }
+.pg-h b { font-family: var(--f-ui); font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--or-sacre); }
+.pg-h small { font-family: var(--f-ui); font-size: .66rem; color: var(--text-mute); }
+.pg-t { margin: 0; line-height: 1.9; color: var(--blanc-parchemin); }
+.pg-heb .pg-t { font-family: var(--f-hebreu); font-size: clamp(1.35rem, 1.1rem + .8vw, 1.75rem); text-align: right; }
+.pg-syr .pg-t { font-family: 'Noto Sans Syriac', sans-serif; font-size: clamp(1.3rem, 1.05rem + .8vw, 1.7rem); text-align: right; line-height: 2.1; }
+.pg-grc .pg-t { font-family: var(--f-grec); font-size: clamp(1.15rem, 1rem + .5vw, 1.4rem); }
+.pg-lat .pg-t { font-family: var(--f-titre); font-size: clamp(1.2rem, 1rem + .5vw, 1.45rem); font-style: italic; }
+.pg-fr { margin-top: 1rem; border: 1px solid rgba(201, 168, 76, .35); border-radius: var(--radius); background: rgba(201, 168, 76, .05); }
+.pg-fr .pg-t { font-family: var(--f-titre); font-size: clamp(1.2rem, 1rem + .5vw, 1.45rem); }
+.pg-tr { margin: .5rem 0 0; font-family: var(--f-ui); font-size: .72rem; color: var(--text-mute); direction: ltr; text-align: left; }
+.pg-s { border-radius: 6px; padding: .05em .12em; margin: 0 -.12em; transition: background .25s, color .25s, box-shadow .25s; cursor: default; outline: none; white-space: nowrap; }
+.pg-fr .pg-s { white-space: normal; }
+.pg-s.is-on { background: rgba(201, 168, 76, .22); color: var(--or-clair); box-shadow: 0 0 0 1px rgba(201, 168, 76, .55), 0 0 18px rgba(201, 168, 76, .25); }
+.pg-s:focus-visible { box-shadow: 0 0 0 2px var(--or-sacre); }
+.pg-notes { margin: 1.2rem 0 0; padding: 0; list-style: none; display: grid; gap: .55rem; }
+.pg-notes li { position: relative; padding-left: 1.4rem; color: var(--text-dim); font-size: var(--t-sm); }
+.pg-notes li::before { content: ""; position: absolute; left: .2rem; top: .62em; width: .45rem; height: .45rem; border-radius: 50%; background: var(--bleu-s7); box-shadow: 0 0 10px var(--bleu-s7); }
+.pg-legende { margin: 0; padding: 1rem clamp(1rem, 3vw, 2rem) 1.4rem; font-size: .8rem; color: var(--text-mute); display: flex; gap: .7rem; align-items: baseline; flex-wrap: wrap; border-top: 1px solid var(--line); }
+
+/* --- VI. Versions --- */
+.vs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.vs { position: relative; padding: 1.3rem 1.3rem 1.4rem; border-radius: var(--radius); border: 1px solid var(--line); background: linear-gradient(170deg, rgba(110, 160, 200, .07), rgba(255, 255, 255, .01) 60%); transition: border-color .3s, transform .3s var(--ease-out); }
+.vs:hover { border-color: rgba(201, 168, 76, .45); transform: translateY(-3px); }
+.vs-d { display: block; font-family: var(--f-ui); font-size: .64rem; letter-spacing: .16em; text-transform: uppercase; color: var(--text-mute); }
+.vs-l { display: inline-block; margin-top: .6rem; padding: .15em .6em; border-radius: 999px; font-family: var(--f-ui); font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; color: var(--bleu-s7-c); border: 1px solid rgba(110, 160, 200, .4); }
+.vs h4 { font-family: var(--f-titre); font-size: var(--t-lg); font-weight: 500; margin: .6rem 0 .2rem; line-height: 1.2; }
+.vs-lieu { margin: 0 0 .5rem; font-size: .78rem; color: var(--or-sacre); }
+.vs p:last-child { margin: 0; font-size: var(--t-sm); color: var(--text-dim); line-height: 1.5; }
+.ag-grid { margin-top: var(--s-9); align-items: center; }
+.s07-conclu { margin: var(--s-9) auto 0; max-width: 62ch; text-align: center; }
+.s07-conclu p { font-family: var(--f-titre); font-style: italic; font-size: clamp(1.3rem, 1rem + 1vw, 1.75rem); line-height: 1.45; color: var(--parchemin); }
+
+/* --- Responsive --- */
+@media (max-width: 1100px) {
+  .vg, .vs-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 1000px) {
+  .lxx-grid, .vg-grid, .am-grid, .pe-grid, .ag-grid, .lg-duo, .nd-grid { grid-template-columns: 1fr; }
+  .pe-grid figure { order: -1; }
+}
+@media (max-width: 700px) {
+  .pg-grid { grid-template-columns: 1fr; }
+  .pg-tabs button { padding: .8rem .3rem; }
+  .pg-tabs button b { font-size: var(--t-base); }
+  .am-fiche dl, .pe-fiche dl { grid-template-columns: 1fr; }
+  .deutero { flex-direction: column; gap: .8rem; }
+  .nd-seg button { max-width: none; width: 100%; }
+}
+@media (max-width: 560px) {
+  .vg, .vs-grid { grid-template-columns: 1fr; }
+  .lxx-cpt, .am-cpt { grid-template-columns: repeat(3, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { .nd-nom > *, .nt-grid li, .pg-s { transition: none; } }
+
+/* --- Correctifs E09 (tests) --- */
+.lxx-text p, .vg-grid p, .pe-grid p, .ag-grid p { margin: 0 0 1rem; }
+.lg.is-leg::after { bottom: -.12em; font-size: 7rem; }
+@media (max-width: 560px) {
+  .lxx-cpt, .am-cpt { grid-template-columns: 1fr; }
+  .lxx-cpt .cpt, .am-cpt .cpt { display: flex; align-items: center; gap: 1rem; text-align: left; padding: 1rem 1.2rem; }
+  .lxx-cpt .cpt-n, .am-cpt .cpt-n { flex: none; min-width: 5.5rem; font-size: 2.2rem; }
+  .lxx-cpt .cpt-l, .am-cpt .cpt-l { margin-top: 0; }
+}

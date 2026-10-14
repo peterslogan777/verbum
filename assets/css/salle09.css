@@ -1,0 +1,217 @@
+/* =====================================================================
+   VERBUM — Salle 09 · Les Preuves archéologiques (E11)
+   ===================================================================== */
+:root { --basalte: #23252b; --calcaire: #d8c7a3; --argile: #b98a5a; --terre: #6b4e33; --f-paleo: 'Noto Sans Phoenician', var(--f-hebreu); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+.s09-fig { margin: 0; }
+.s09-fig img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid var(--line); box-shadow: var(--shadow-card); cursor: zoom-in; }
+.s09-fig figcaption, .lampe figcaption { margin-top: .7rem; font-size: var(--t-sm); color: var(--text-mute); }
+.s09-link { margin-top: var(--s-6); }
+.fiche .btn { margin-top: .4rem; }
+.fiche-mini { margin-top: var(--s-5); padding: 1.1rem 1.3rem; }
+.fiche-mini dl { grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; }
+.fiche-mini dd { font-size: 1rem; }
+.cpt-n { font-variant-numeric: lining-nums tabular-nums; }
+
+/* --- I. Atlas --- */
+.at-intro { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.s09-cpt { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.s09-cpt .cpt-n { white-space: nowrap; font-size: clamp(1.8rem, 1.1rem + 1.7vw, 2.9rem); }
+.at-legend { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: var(--s-7); }
+.at-col { padding: 1.3rem 1.4rem; border-radius: var(--radius); border: 1px solid var(--line); background: linear-gradient(180deg, rgba(201, 168, 76, .05), transparent); }
+.at-col h3 { font-family: var(--f-titre); font-weight: 500; font-size: 1.3rem; margin-bottom: .35rem; color: var(--or-clair); }
+.at-col p { color: var(--text-dim); font-size: 1rem; }
+.at-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(1.5rem, 3vw, 2.5rem); margin-top: var(--s-7); align-items: start; }
+.at-map { position: relative; }
+.at-canvas { display: block; width: 100%; aspect-ratio: 5 / 4; border-radius: var(--radius-lg); border: 1px solid var(--line-strong); background: radial-gradient(90% 90% at 40% 40%, #12243a, #0b1522 70%); box-shadow: var(--shadow-card); }
+.at-hint { margin-top: .6rem; font-size: var(--t-xs); color: var(--text-mute); text-align: center; }
+.at-sub { margin-top: 0; }
+.at-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .45rem; }
+.at-btn { width: 100%; display: grid; grid-template-columns: 3.6rem minmax(0, 1fr); column-gap: .9rem; align-items: baseline; text-align: left; padding: .75rem 1rem; border-radius: 12px; border: 1px solid var(--line); background: rgba(255, 255, 255, .02); transition: border-color .3s, background .3s; }
+.at-btn:hover, .at-btn[aria-pressed="true"] { border-color: var(--line-strong); background: rgba(201, 168, 76, .08); }
+.at-y { grid-row: span 2; font-family: var(--f-titre); font-size: 1.45rem; color: var(--or-clair); font-variant-numeric: lining-nums; }
+.at-o { font-family: var(--f-titre); font-size: 1.15rem; color: var(--blanc-parchemin); }
+.at-l { font-family: var(--f-ui); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--text-mute); }
+.at-info { padding: .8rem 1rem .4rem 5.5rem; font-size: .98rem; color: var(--text-dim); }
+.at-info p { margin-bottom: .45rem; }
+.at-mus { font-size: .9rem; color: var(--text-mute); }
+.at-go { display: inline-flex; align-items: center; gap: .4rem; font-family: var(--f-ui); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--or-clair); }
+.at-go svg { width: 14px; height: 14px; }
+
+/* --- II. Mésha : lampe rasante --- */
+.me-grid, .dan-grid, .ni-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.lampe { margin: 0; }
+.lampe-in { position: relative; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow-card); --x: 50%; --y: 40%; touch-action: pan-y; }
+.lampe-in img { display: block; width: 100%; aspect-ratio: 16 / 11; object-fit: cover; }
+.lampe-base { filter: brightness(.32) saturate(.6); cursor: zoom-in; }
+.lampe-lit { position: absolute; inset: 0; height: 100%; pointer-events: none; filter: brightness(1.25) contrast(1.15) sepia(.15);
+  -webkit-mask-image: radial-gradient(circle 150px at var(--x) var(--y), #000 0, rgba(0, 0, 0, .7) 45%, transparent 100%);
+  mask-image: radial-gradient(circle 150px at var(--x) var(--y), #000 0, rgba(0, 0, 0, .7) 45%, transparent 100%); }
+.lampe-tip { position: absolute; left: 50%; bottom: 1rem; transform: translateX(-50%); padding: .4rem .9rem; border-radius: 999px; background: rgba(10, 10, 15, .7); border: 1px solid var(--line); font-family: var(--f-ui); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--or-clair); pointer-events: none; transition: opacity .6s; }
+.lampe-in.is-used .lampe-tip { opacity: 0; }
+.me-debat { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(1.5rem, 3vw, 2.5rem); align-items: center; margin-top: var(--s-7); }
+.me-debat .debat { margin-top: 0; }
+
+/* --- Lecteur d'inscription --- */
+.insc { border-radius: var(--radius-lg); border: 1px solid var(--line-strong); background: linear-gradient(160deg, #1b1d22, #121317 60%); box-shadow: var(--shadow-card); overflow: hidden; }
+.in-head { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; padding: 1.1rem 1.4rem; border-bottom: 1px solid var(--line); }
+.in-t { font-family: var(--f-titre); font-weight: 500; font-size: 1.4rem; }
+.in-lab { font-family: var(--f-ui); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-mute); }
+.in-body { padding: .6rem 1.4rem; }
+.in-l { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr); column-gap: 1rem; padding: .9rem 0; border-bottom: 1px dashed rgba(201, 168, 76, .14); }
+.in-l:last-child { border-bottom: 0; }
+.in-n { grid-row: span 2; font-family: var(--f-ui); font-size: .7rem; letter-spacing: .1em; color: var(--or-sacre); padding-top: .7rem; font-variant-numeric: lining-nums; }
+.in-o { margin: 0; line-height: 1.6; }
+.insc-rtl .in-o { text-align: right; }
+.in-f { margin: .35rem 0 0; font-family: var(--f-titre); font-style: italic; font-size: 1.12rem; color: var(--parchemin); }
+.w { display: inline-block; padding: .1rem .35rem; margin: .1rem 0; border-radius: 8px; border: 1px solid transparent; color: #dfe2e8; transition: background .25s, border-color .25s, color .25s; white-space: nowrap; }
+.w:hover { background: rgba(201, 168, 76, .1); }
+.w[aria-pressed="true"] { background: rgba(201, 168, 76, .18); border-color: var(--line-strong); color: var(--or-clair); }
+.w-c { font-family: var(--f-hebreu); font-size: clamp(1.35rem, 1.1rem + .9vw, 1.8rem); }
+.w-p { display: none; font-family: var(--f-paleo); font-size: clamp(1.3rem, 1.05rem + .9vw, 1.75rem); letter-spacing: .04em; }
+.insc.is-paleo .w-c { display: none; }
+.insc.is-paleo .w-p { display: inline; }
+.insc-ltr .w-c { font-family: var(--f-cap); font-size: clamp(1.1rem, .95rem + .6vw, 1.45rem); letter-spacing: .12em; }
+.w-sep { color: var(--or-sombre); padding-inline: .1rem; font-size: 1.2rem; }
+.w.is-key { text-shadow: 0 0 14px rgba(230, 204, 122, .6); }
+.in-info { padding: 1rem 1.4rem 1.2rem; border-top: 1px solid var(--line); background: rgba(201, 168, 76, .04); min-height: 5.4rem; }
+.in-hint { color: var(--text-mute); font-size: .95rem; }
+.in-sel { display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem 1rem; }
+.in-w { font-family: var(--f-hebreu); font-size: 1.6rem; color: var(--or-clair); }
+.insc-ltr .in-w { font-family: var(--f-cap); font-size: 1.25rem; }
+.in-tr { font-family: var(--f-ui); font-size: .8rem; letter-spacing: .08em; color: var(--text-mute); font-style: italic; }
+.in-fr { font-family: var(--f-titre); font-size: 1.35rem; font-weight: 500; color: var(--blanc-parchemin); }
+.in-note { flex-basis: 100%; margin: .2rem 0 0; color: var(--text-dim); font-size: .98rem; }
+.in-note:empty { display: none; }
+.in-seg button { padding: .45rem .8rem; }
+
+/* --- III. Tel Dan : fouille --- */
+.fouille-in { position: relative; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow-card); }
+.fouille-in img { display: block; width: 100%; aspect-ratio: 16 / 11; object-fit: cover; }
+.fouille-c { position: absolute; inset: 0; width: 100%; height: 100%; cursor: grab; touch-action: none; }
+.fouille.is-done .fouille-c { opacity: 0; transition: opacity 1.2s; pointer-events: none; }
+.fouille-ok { position: absolute; left: 1rem; right: 1rem; bottom: 1rem; padding: .9rem 1.1rem; border-radius: 12px; background: rgba(10, 10, 15, .8); border: 1px solid var(--line-strong); backdrop-filter: blur(6px); display: grid; gap: .2rem; }
+.fouille-ok b { font-family: var(--f-titre); font-size: 1.3rem; color: var(--or-clair); font-weight: 500; }
+.fouille-ok span { font-size: .95rem; color: var(--text-dim); }
+.fouille-bar { display: flex; align-items: center; gap: 1rem; margin-top: .8rem; }
+.fouille-msg { flex: 1; font-size: var(--t-sm); color: var(--text-mute); }
+.fouille-pc { font-family: var(--f-titre); font-size: 1.5rem; color: var(--or-clair); min-width: 3.5rem; text-align: right; font-variant-numeric: lining-nums tabular-nums; }
+.fouille-r { padding: .45rem .9rem; border-radius: 999px; border: 1px solid var(--line); font-family: var(--f-ui); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); }
+.fouille-r:hover { color: var(--blanc-parchemin); border-color: var(--line-strong); }
+
+/* --- IV. Cyrus --- */
+.cy-fig img { aspect-ratio: 21 / 9; }
+.cy-duo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.4rem; margin-top: var(--s-7); }
+.cy-c { padding: clamp(1.3rem, 3vw, 2rem); border-radius: var(--radius-lg); border: 1px solid var(--line); background: rgba(255, 255, 255, .02); }
+.cy-k { display: block; font-family: var(--f-ui); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--or-sacre); margin-bottom: 1rem; }
+.cy-akk { font-family: var(--f-texte); font-size: 1.25rem; color: var(--argile); padding: .9rem 1.1rem; border-left: 2px solid var(--argile); background: rgba(185, 138, 90, .07); border-radius: 0 var(--radius) var(--radius) 0; margin-bottom: .5rem; }
+.cy-akk-fr { font-family: var(--f-titre); font-style: italic; font-size: 1.15rem; color: var(--parchemin); margin-bottom: 1.1rem; }
+.cy-akk-fr small { font-style: normal; font-family: var(--f-ui); font-size: .68rem; color: var(--text-mute); }
+.cy-fr { color: var(--text-dim); }
+.cy-src { margin-top: .8rem; font-size: .85rem; color: var(--text-mute); }
+
+/* --- V. Éléphantine --- */
+.s09-el { position: relative; overflow: hidden; }
+.s09-band { position: absolute; inset: 0 0 auto; height: 560px; z-index: 0; }
+.s09-band img { width: 100%; height: 100%; object-fit: cover; opacity: .32; -webkit-mask-image: linear-gradient(#000 20%, transparent); mask-image: linear-gradient(#000 20%, transparent); }
+.s09-el .container { position: relative; z-index: 1; }
+.el-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.el-q { margin-top: 1rem; margin-bottom: 0; }
+.el-q .qh { font-size: clamp(1.2rem, 1rem + .8vw, 1.55rem); }
+.el-sub { margin-top: 0; }
+.el-net { position: relative; aspect-ratio: 1 / 1.05; border-radius: var(--radius-lg); border: 1px solid var(--line); background: radial-gradient(60% 60% at 50% 50%, rgba(201, 168, 76, .1), transparent 70%), rgba(10, 10, 15, .5); }
+.el-lines { position: absolute; inset: 0; width: 100%; height: 100%; }
+.el-lines line { stroke: rgba(201, 168, 76, .35); stroke-width: .35; stroke-dasharray: 1.2 1; vector-effect: non-scaling-stroke; transition: stroke .3s; }
+.el-lines line.is-on { stroke: var(--or-clair); stroke-dasharray: none; }
+.el-n { position: absolute; left: var(--x); top: var(--y); transform: translate(-50%, -50%); width: min(46%, 240px); padding: .6rem .8rem; border-radius: 14px; border: 1px solid var(--line-strong); background: #15161b; text-align: center; transition: border-color .3s, box-shadow .3s, background .3s; }
+.el-n b { display: block; font-family: var(--f-titre); font-size: 1.15rem; font-weight: 500; color: var(--blanc-parchemin); }
+.el-n small { display: block; font-size: .78rem; color: var(--text-mute); line-height: 1.3; }
+.el-ref { display: none; margin-top: .4rem; font-size: .82rem; color: var(--or-clair); line-height: 1.3; }
+.el-n[aria-pressed="true"] { border-color: var(--or-clair); box-shadow: var(--glow-or); background: #1d1b15; z-index: 2; }
+.el-n[aria-pressed="true"] .el-ref { display: block; }
+.el-c { background: linear-gradient(160deg, #3a2f1c, #1c170e); border-color: var(--or-sacre); }
+.el-hint { margin-top: .6rem; font-size: var(--t-xs); color: var(--text-mute); text-align: center; }
+.el-debat { margin-top: var(--s-5); }
+
+/* --- VI. Pilate et Caïphe --- */
+.ev-duo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.4rem, 3vw, 2.4rem); align-items: start; }
+.ev-c h3 { font-family: var(--f-titre); font-size: var(--t-lg); font-weight: 500; margin: 1.4rem 0 .6rem; }
+.ev-c > p { color: var(--text-dim); margin-bottom: 1.2rem; }
+.ev-c .insc { margin-bottom: 1rem; }
+.ev-note { font-size: .98rem; }
+
+/* --- VII. Ninive / déluge --- */
+.ni-list { list-style: none; padding: 0; margin: 1.2rem 0 0; display: grid; gap: .9rem; }
+.ni-list li { padding-left: 1.1rem; border-left: 2px solid var(--line-strong); color: var(--text-dim); }
+.ni-list b { color: var(--blanc-parchemin); font-weight: 500; }
+.dl-wrap { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(1.5rem, 3vw, 2.5rem); align-items: center; margin-top: var(--s-8); }
+.dl-sub { margin-top: 0; }
+.dl-side > p { color: var(--text-dim); margin-bottom: 1.2rem; }
+.dl-tab { margin-top: var(--s-6); border-radius: var(--radius-lg); border: 1px solid var(--line); overflow: hidden; }
+.dl-row { display: grid; grid-template-columns: 10rem minmax(0, 1fr) minmax(0, 1fr) 7.5rem; gap: 1rem; padding: 1rem 1.3rem; border-top: 1px solid var(--line); align-items: start; transition: opacity .4s, background .4s; }
+.dl-row:first-child { border-top: 0; }
+.dl-hd { background: rgba(201, 168, 76, .07); font-family: var(--f-ui); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--or-clair); align-items: center; }
+.dl-hd small { display: block; text-transform: none; letter-spacing: .02em; color: var(--text-mute); font-size: .72rem; margin-top: .15rem; }
+.dl-hd .badge { margin-left: .3rem; }
+.dl-k { font-family: var(--f-titre); font-size: 1.15rem; color: var(--blanc-parchemin); }
+.dl-g { color: #cdb79a; }
+.dl-b { color: var(--parchemin); }
+.dl-tag { justify-self: end; font-family: var(--f-ui); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; padding: .25rem .55rem; border-radius: 999px; border: 1px solid; white-space: nowrap; }
+.dl-row[data-t="proche"] .dl-tag { color: var(--vert-dore-clair); border-color: rgba(181, 199, 122, .45); }
+.dl-row[data-t="diff"] .dl-tag { color: #e5a08f; border-color: rgba(194, 69, 59, .5); }
+.dl-tab[data-f="proche"] .dl-row[data-t="diff"], .dl-tab[data-f="diff"] .dl-row[data-t="proche"] { opacity: .22; }
+.dl-tab[data-f="proche"] .dl-row[data-t="proche"], .dl-tab[data-f="diff"] .dl-row[data-t="diff"] { background: rgba(201, 168, 76, .05); }
+
+/* --- VIII. Registre --- */
+.rg-seg { margin-bottom: 1rem; }
+.rg-count { font-size: var(--t-sm); color: var(--text-mute); margin-bottom: 1.2rem; }
+.rg-count b { color: var(--or-clair); font-family: var(--f-titre); font-size: 1.3rem; font-weight: 500; }
+.rg-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.rg-c { padding: 1.3rem 1.4rem; border-radius: var(--radius); border: 1px solid var(--line); background: linear-gradient(170deg, rgba(201, 168, 76, .05), rgba(255, 255, 255, .01) 50%); transition: opacity .4s, transform .4s; }
+.rg-c[hidden] { display: none; }
+.rg-c.is-in { animation: rgIn .5s var(--ease-out); }
+@keyframes rgIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.rg-test { font-family: var(--f-ui); font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: var(--or-sacre); }
+.rg-c h4 { font-family: var(--f-titre); font-size: 1.55rem; font-weight: 500; margin: .2rem 0 0; }
+.rg-role { font-size: .92rem; color: var(--text-mute); }
+.rg-ref { margin: .8rem 0; font-size: .95rem; color: var(--parchemin); }
+.rg-c dl { display: grid; gap: .5rem; margin: 0; }
+.rg-c dt { font-family: var(--f-ui); font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; color: var(--text-mute); }
+.rg-c dd { margin: 0; font-size: .95rem; color: var(--text-dim); line-height: 1.4; }
+.rg-src { margin-top: var(--s-6); font-size: .9rem; color: var(--text-mute); }
+.rg-src a { color: var(--or-clair); text-decoration: underline; text-underline-offset: 3px; }
+
+/* --- Responsive --- */
+@media (max-width: 1100px) {
+  .rg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dl-row { grid-template-columns: 8rem minmax(0, 1fr) minmax(0, 1fr); }
+  .dl-tag { display: none; }
+  .dl-hd span:last-child { display: none; }
+}
+@media (max-width: 1000px) {
+  .at-intro, .at-grid, .me-grid, .dan-grid, .ni-grid, .me-debat, .el-grid, .ev-duo, .cy-duo, .dl-wrap { grid-template-columns: minmax(0, 1fr); }
+  .at-legend { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 700px) {
+  .s09-cpt { grid-template-columns: minmax(0, 1fr); }
+  .rg-grid { grid-template-columns: minmax(0, 1fr); }
+  .fiche-mini dl { grid-template-columns: minmax(0, 1fr); }
+  .dl-row { grid-template-columns: minmax(0, 1fr); gap: .35rem; }
+  .dl-hd { display: none; }
+  .dl-g::before { content: "Gilgamesh : "; font-family: var(--f-ui); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-mute); }
+  .dl-b::before { content: "Genèse : "; font-family: var(--f-ui); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-mute); }
+  .dl-tag { display: inline-block; justify-self: start; }
+  .in-l { grid-template-columns: minmax(0, 1fr); }
+  .in-n { grid-row: auto; padding-top: 0; }
+  .at-info { padding-left: 1rem; }
+  .el-net { aspect-ratio: auto; display: grid; gap: .6rem; padding: .8rem; }
+  .el-lines { display: none; }
+  .el-n { position: static; transform: none; width: 100%; }
+  .cy-fig img { aspect-ratio: 16 / 10; }
+}
+@media (max-width: 560px) {
+  .at-btn { grid-template-columns: 3rem minmax(0, 1fr); }
+  .in-head { padding: 1rem; }
+  .in-body, .in-info { padding-inline: 1rem; }
+}

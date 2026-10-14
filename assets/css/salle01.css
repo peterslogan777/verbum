@@ -1,0 +1,194 @@
+/* =====================================================================
+   VERBUM — Salle 01 · Les Origines (étape E03)
+   ===================================================================== */
+.s01-ketef { background: radial-gradient(60% 50% at 85% 10%, rgba(201, 168, 76, .07), transparent 70%); }
+
+/* --- Récit + photo --- */
+.k-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(2rem, 4vw, 4rem); align-items: center; }
+.k-photo img, .k-deroul > img, .e-fig img, .ab-fig img { border-radius: var(--radius); box-shadow: var(--shadow-card); }
+.k-text p { color: var(--text-dim); margin-bottom: 1rem; }
+.k-text b { color: var(--blanc-parchemin); font-weight: 500; }
+
+
+/* --- Amulettes (loupe) + déroulement --- */
+.k-duo { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(1.5rem, 3vw, 3rem); margin-top: var(--s-8); align-items: start; }
+.loupe-frame { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-card); }
+.loupe-frame .loupe-lens { overflow: hidden; }
+.k-amulettes figcaption b { color: var(--or-clair); font-style: normal; font-weight: 500; }
+.k-steps { margin-top: 1.4rem; border-left: 1px solid var(--line-strong); }
+.k-steps li { position: relative; padding: .45rem 0 .45rem 1.3rem; color: var(--text-dim); font-size: .98rem; }
+.k-steps li::before { content: ""; position: absolute; left: -4px; top: 1rem; width: 7px; height: 7px; border-radius: 50%; background: var(--or-sacre); box-shadow: 0 0 10px var(--or-sacre); }
+.k-steps b { display: inline-block; min-width: 7.5em; font-family: var(--f-cap); font-size: .82rem; color: var(--or-clair); letter-spacing: .05em; }
+
+/* --- Bénédiction interactive --- */
+.s01-bened { background: linear-gradient(180deg, transparent, rgba(13, 27, 42, .55) 30%, rgba(13, 27, 42, .55) 70%, transparent); }
+.bened { max-width: 1040px; margin-inline: auto; padding: clamp(1.2rem, 3vw, 2.6rem); border-radius: var(--radius-lg); border: 1px solid var(--line-strong);
+  background: radial-gradient(90% 70% at 50% 0%, rgba(201, 168, 76, .10), transparent 70%), rgba(10, 10, 15, .55); box-shadow: var(--shadow-card); }
+.bened-tools { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+.kh-toggle { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--f-ui); font-size: .78rem; color: var(--text-dim); cursor: pointer; }
+.kh-toggle input { accent-color: var(--or-sacre); width: 1.05rem; height: 1.05rem; }
+
+.verset { padding: 1.4rem 0; border-top: 1px solid var(--line); }
+.verset:first-child { border-top: 0; padding-top: 0; }
+.v-ref { display: block; font-family: var(--f-ui); font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; color: var(--or-sacre); margin-bottom: .8rem; }
+.v-line { display: flex; flex-wrap: wrap; gap: .6rem 1.1rem; direction: rtl; justify-content: flex-start; }
+.bened[data-script="tr"] .v-line { direction: ltr; }
+.v-fr { margin-top: .9rem; font-family: var(--f-titre); font-style: italic; font-size: var(--t-lg); color: var(--parchemin); }
+
+.w { display: inline-flex; flex-direction: column; align-items: center; gap: .35rem; padding: .45rem .55rem .5rem; border-radius: 10px; border: 1px solid transparent; cursor: default; transition: background .3s, border-color .3s, transform .3s var(--ease-out), opacity .4s; outline: none; }
+.w:hover, .w:focus-visible { background: rgba(201, 168, 76, .1); border-color: var(--line-strong); transform: translateY(-3px); }
+.w > span:not(.w-fr) { display: none; line-height: 1.15; }
+.bened[data-script="paleo"] .w-paleo, .bened[data-script="heb"] .w-heb, .bened[data-script="tr"] .w-tr { display: block; animation: w-in .6s var(--ease-out) both; }
+.w-paleo { font-family: "Noto Sans Phoenician", var(--f-hebreu); font-size: clamp(1.9rem, 1.3rem + 2vw, 2.9rem); color: #D9DDE3; text-shadow: 0 0 1px #fff, 0 1px 0 #6d727a, 0 0 18px rgba(220, 225, 235, .25); letter-spacing: .04em; }
+.w-heb { font-family: var(--f-hebreu); font-size: clamp(1.9rem, 1.3rem + 2vw, 2.8rem); color: var(--blanc-parchemin); direction: rtl; }
+.w-tr { font-family: var(--f-texte); font-style: italic; font-size: clamp(1.25rem, 1rem + 1vw, 1.7rem); color: var(--blanc-parchemin); }
+.w-fr { font-family: var(--f-ui); font-size: .72rem; color: var(--text-mute); direction: ltr; text-align: center; max-width: 11em; transition: color .3s; }
+.w:hover .w-fr, .w:focus-visible .w-fr { color: var(--or-clair); }
+.w.is-tetra .w-paleo, .w.is-tetra .w-heb, .w.is-tetra .w-tr { color: var(--or-clair); text-shadow: 0 0 22px rgba(230, 204, 122, .45); }
+.w.is-tetra .w-fr { color: var(--or-sacre); }
+.bened.show-kh .w:not(.is-kh) { opacity: .28; }
+.bened.show-kh .w.is-kh { border-color: rgba(201, 168, 76, .55); background: rgba(201, 168, 76, .08); }
+@keyframes w-in { from { opacity: 0; filter: blur(6px); transform: translateY(6px); } }
+.bened-note { margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px dashed var(--line); font-size: .95rem; color: var(--text-mute); }
+.bened-note [lang="he"] { font-family: var(--f-hebreu); color: var(--or-clair); font-size: 1.15em; }
+
+/* --- Cartes KH1 / KH2 --- */
+.kh-cards { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.2rem, 3vw, 2.4rem); margin-top: var(--s-7); }
+.kh-card { padding: clamp(1.3rem, 3vw, 2.2rem); border-radius: var(--radius-lg); border: 1px solid var(--line); background: linear-gradient(170deg, rgba(200, 205, 215, .07), rgba(10, 10, 15, .4)); }
+.kh-id { font-family: var(--f-ui); font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; color: #C9CED6; }
+.kh-card h3 { font-family: var(--f-titre); font-size: var(--t-lg); font-weight: 500; margin: .4rem 0 1rem; }
+.kh-paleo { font-family: "Noto Sans Phoenician", serif; font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); color: #D9DDE3; line-height: 1.5; text-shadow: 0 0 14px rgba(220, 225, 235, .2); }
+.kh-heb { font-family: var(--f-hebreu); font-size: 1.45rem; color: var(--blanc-parchemin); margin-top: .3rem; }
+.kh-heb-sm { font-family: var(--f-hebreu); font-size: 1.8rem; color: var(--blanc-parchemin); }
+.kh-gloss { font-family: var(--f-ui); font-size: .78rem; color: var(--or-clair); margin-bottom: .6rem; }
+.kh-fr { font-family: var(--f-titre); font-style: italic; font-size: 1.2rem; color: var(--parchemin); margin: .9rem 0; }
+.kh-note { font-size: .92rem; color: var(--text-mute); }
+.kh-note b { color: var(--text-dim); font-weight: 500; }
+
+
+/* --- Moïse : bandeau --- */
+.s01-moise { padding-top: 0; }
+.m-hero { position: relative; min-height: min(88vh, 860px); display: flex; align-items: flex-end; overflow: hidden; isolation: isolate; margin-bottom: var(--s-8); }
+.m-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 30% 30%; z-index: -2; }
+.m-hero-veil { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, #0A0A0F 0%, rgba(10, 10, 15, .1) 25%, rgba(10, 10, 15, .2) 55%, #0A0A0F 100%), linear-gradient(270deg, rgba(10, 10, 15, .85) 0%, transparent 65%); }
+.m-hero-text { padding-block: var(--s-8); display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
+.m-quote { max-width: 34rem; margin-top: 1rem; }
+.m-heb { font-family: var(--f-hebreu); font-size: clamp(1.8rem, 1.2rem + 2.2vw, 3rem); color: var(--or-clair); text-shadow: 0 2px 30px rgba(0, 0, 0, .8); line-height: 1.3; }
+.m-fr { font-family: var(--f-titre); font-style: italic; font-size: var(--t-lg); color: var(--blanc-parchemin); margin-top: .5rem; text-shadow: 0 2px 20px rgba(0, 0, 0, .9); }
+.m-quote cite { display: block; margin-top: .6rem; font-family: var(--f-ui); font-style: normal; font-size: .7rem; letter-spacing: .25em; text-transform: uppercase; color: var(--or-sacre); }
+.tag-on-img { margin-top: 1.4rem; background: rgba(10, 10, 15, .5); }
+.m-intro { max-width: 860px; margin-inline: auto; color: var(--text-dim); font-size: var(--t-base); }
+.m-intro b { color: var(--blanc-parchemin); font-weight: 500; }
+.m-intro [lang="he"] { font-family: var(--f-hebreu); color: var(--or-clair); }
+
+/* --- Cartes à retourner --- */
+.flips { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+.flip { perspective: 1200px; min-height: 330px; }
+.flip-inner { position: relative; width: 100%; height: 100%; min-height: 330px; transform-style: preserve-3d; transition: transform .9s var(--ease-out); text-align: center; color: inherit; }
+.flip-inner.is-flipped { transform: rotateY(180deg); }
+@media (hover: hover) { .flip:hover .flip-inner:not(.is-flipped) { transform: rotateY(14deg) translateY(-4px); } }
+.flip-face { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .6rem; padding: 1.3rem 1rem; border-radius: var(--radius); backface-visibility: hidden; -webkit-backface-visibility: hidden; border: 1px solid var(--line-strong); }
+.flip-front { background: radial-gradient(80% 60% at 50% 30%, rgba(201, 168, 76, .16), transparent 70%), linear-gradient(180deg, #13263A, #0A0A0F); }
+.flip-back { transform: rotateY(180deg); background: linear-gradient(180deg, #F5E6C8, #E5D2A8); color: #2a1f0e; justify-content: flex-start; text-align: left; align-items: flex-start; }
+.fl-num { font-family: var(--f-ui); font-size: .62rem; letter-spacing: .25em; text-transform: uppercase; color: var(--text-mute); }
+.fl-heb { font-family: var(--f-hebreu); font-size: clamp(2rem, 1.4rem + 1.4vw, 2.7rem); color: var(--or-clair); line-height: 1.2; }
+.fl-tr { font-family: var(--f-texte); font-style: italic; font-size: .98rem; color: var(--text-dim); }
+.flip-front .fl-fr { font-family: var(--f-cap); font-size: 1.05rem; letter-spacing: .12em; color: var(--blanc-parchemin); }
+.fl-hint { margin-top: .6rem; font-family: var(--f-ui); font-size: .6rem; letter-spacing: .25em; text-transform: uppercase; color: var(--or-sacre); }
+.fl-hint::after { content: " ↻"; }
+.flip-back .fl-fr { font-family: var(--f-cap); font-size: 1.1rem; letter-spacing: .1em; color: #6b4a1a; }
+.fl-meta { font-family: var(--f-ui); font-size: .7rem; color: #6b5a3a; line-height: 1.5; }
+.fl-resume { font-family: var(--f-texte); font-size: 1rem; line-height: 1.45; color: #2a1f0e; }
+
+/* --- Deux lectures --- */
+.lectures { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line-strong); }
+.lecture { padding: clamp(1.4rem, 3vw, 2.4rem); background: rgba(201, 168, 76, .05); }
+.lecture + .lecture { border-left: 1px solid var(--line-strong); background: rgba(110, 160, 200, .05); }
+.l-label { font-family: var(--f-ui); font-size: .64rem; letter-spacing: .24em; text-transform: uppercase; color: var(--or-sacre); }
+.lecture + .lecture .l-label { color: #9FC3DA; }
+.lecture h4 { font-family: var(--f-titre); font-size: var(--t-lg); font-weight: 500; margin: .4rem 0 .2rem; }
+.l-date { font-family: var(--f-cap); font-size: .9rem; color: var(--blanc-parchemin); margin-bottom: .9rem; }
+.lecture p:not(.l-date) { color: var(--text-dim); font-size: 1rem; }
+.lecture b { color: var(--blanc-parchemin); font-weight: 500; }
+.lectures-note { margin-top: 1.2rem; padding: 1rem 1.3rem; border-left: 2px solid var(--or-sacre); background: rgba(201, 168, 76, .05); color: var(--text-dim); }
+.lectures-note b { color: var(--blanc-parchemin); font-weight: 500; }
+
+/* --- Écrire au IIe millénaire --- */
+.ecrire { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 4vw, 4rem); align-items: center; }
+.e-text p { color: var(--text-dim); margin-bottom: 1rem; }
+.e-text b { color: var(--blanc-parchemin); font-weight: 500; }
+.alphabet { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(1.5rem, 3vw, 3rem); margin-top: var(--s-7); align-items: start; }
+.ab-table { padding: clamp(1.2rem, 3vw, 2rem); border-radius: var(--radius-lg); border: 1px solid var(--line-strong); background: rgba(10, 10, 15, .5); }
+.ab-table h4 { font-family: var(--f-titre); font-size: var(--t-lg); font-weight: 500; margin-bottom: 1rem; }
+.ab-head, .ab-row { display: grid; grid-template-columns: 64px 64px 64px 54px 1fr; align-items: center; gap: .6rem; }
+.ab-head span { font-family: var(--f-ui); font-size: .58rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-mute); text-align: center; }
+.ab-row { padding: .45rem 0; border-top: 1px solid var(--line); }
+.ab-cell { display: grid; place-items: center; height: 54px; border-radius: 10px; }
+.ab-proto { color: #E0A27A; background: rgba(160, 80, 50, .12); }
+.ab-proto svg { width: 34px; height: 34px; }
+.ab-paleo { font-family: "Noto Sans Phoenician", serif; font-size: 1.9rem; color: #D9DDE3; }
+.ab-heb { font-family: var(--f-hebreu); font-size: 2rem; color: var(--or-clair); }
+.ab-lat { font-family: var(--f-cap); font-size: 1.6rem; color: var(--blanc-parchemin); }
+.ab-name { font-size: .95rem; color: var(--text-dim); }
+.ab-name b { font-family: var(--f-texte); font-style: italic; font-weight: 400; color: var(--blanc-parchemin); }
+.ab-note { margin-top: 1rem; font-size: .92rem; color: var(--text-mute); }
+.ab-note b { color: var(--or-clair); }
+
+/* --- Témoins --- */
+.temoin { display: grid; grid-template-columns: 1.1fr 1fr; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line); background: rgba(255, 255, 255, .02); }
+.temoin.is-strong { border-color: rgba(159, 208, 224, .35); box-shadow: 0 0 60px -20px rgba(80, 150, 180, .35); }
+.t-img { position: relative; overflow: hidden; background: #050507; }
+.t-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease-out); }
+.temoin:hover .t-img img { transform: scale(1.04); }
+.t-body { padding: clamp(1.3rem, 3vw, 2.4rem); }
+.t-badges { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem; margin-bottom: .8rem; }
+.t-date { font-family: var(--f-cap); font-size: .82rem; color: var(--or-clair); letter-spacing: .06em; }
+.t-body h3 { font-family: var(--f-titre); font-size: var(--t-xl); font-weight: 500; margin-bottom: .7rem; }
+.t-body p { color: var(--text-dim); font-size: 1rem; margin-bottom: .8rem; }
+.t-body b { color: var(--blanc-parchemin); font-weight: 500; }
+.t-quote { margin: 1.2rem 0; padding: 1rem 1.3rem; border-left: 2px solid #9FD0E0; background: rgba(80, 150, 180, .07); }
+.t-orig { font-family: var(--f-texte); font-style: italic; color: var(--text-mute) !important; margin: 0 !important; }
+.t-fr { font-family: var(--f-titre); font-size: 1.35rem !important; font-style: italic; color: var(--parchemin) !important; margin: .2rem 0 !important; }
+.t-quote cite { font-family: var(--f-ui); font-style: normal; font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-mute); }
+.t-where { font-size: .9rem !important; color: var(--text-mute) !important; }
+.temoins-duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.2rem, 3vw, 2rem); margin-top: clamp(1.2rem, 3vw, 2rem); }
+.temoins-duo .temoin { grid-template-columns: 1fr; }
+.temoins-duo .t-img { aspect-ratio: 16 / 8; }
+.temoin.is-debat { border-style: dashed; border-color: rgba(235, 178, 106, .3); }
+
+/* --- Repères --- */
+.reperes { margin-top: var(--s-8); }
+.reperes ol { display: grid; grid-template-columns: repeat(5, 1fr); position: relative; }
+.reperes ol::before { content: ""; position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: linear-gradient(90deg, var(--or-sacre), rgba(201, 168, 76, .2)); }
+.reperes li { position: relative; padding: 1.6rem .8rem 0 0; }
+.reperes li::before { content: ""; position: absolute; left: 0; top: 0; width: 15px; height: 15px; border-radius: 50%; border: 2px solid var(--or-sacre); background: #0A0A0F; box-shadow: 0 0 12px rgba(201, 168, 76, .5); }
+.reperes li.next::before { border-style: dashed; box-shadow: none; }
+.reperes b { display: block; font-family: var(--f-cap); font-size: .85rem; color: var(--or-clair); margin-bottom: .3rem; }
+.reperes span { font-size: .95rem; color: var(--text-dim); }
+
+/* --- Adaptatif --- */
+@media (max-width: 1100px) {
+  .flips { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 900px) {
+  .k-grid, .k-duo, .kh-cards, .lectures, .ecrire, .alphabet, .temoin, .temoins-duo { grid-template-columns: 1fr; }
+  .lecture + .lecture { border-left: 0; border-top: 1px solid var(--line-strong); }
+  .temoin .t-img { aspect-ratio: 16 / 9; }
+  .reperes ol { grid-template-columns: 1fr; gap: 1.2rem; padding-left: 1.6rem; }
+  .reperes ol::before { left: 7px; right: auto; top: 0; bottom: 0; width: 1px; height: auto; background: linear-gradient(180deg, var(--or-sacre), rgba(201, 168, 76, .2)); }
+  .reperes li { padding: 0 0 0 .6rem; }
+  .reperes li::before { left: -1.6rem; top: .1rem; }
+  .m-hero { min-height: 72vh; }
+  .m-hero-text { align-items: flex-start; text-align: left; }
+  .m-hero-veil { background: linear-gradient(180deg, #0A0A0F 0%, rgba(10, 10, 15, .1) 25%, rgba(10, 10, 15, .55) 60%, #0A0A0F 100%); }
+}
+@media (max-width: 620px) {
+  .flips { grid-template-columns: 1fr 1fr; }
+  .flip, .flip-inner { min-height: 300px; }
+  .ab-head, .ab-row { grid-template-columns: 46px 46px 46px 40px 1fr; gap: .4rem; }
+  .ab-cell { height: 44px; }
+  .ab-proto svg { width: 28px; height: 28px; }
+  .ab-paleo, .ab-heb { font-size: 1.5rem; }
+  .ab-lat { font-size: 1.25rem; }
+}
+@media (max-width: 420px) { .flips { grid-template-columns: 1fr; } }

@@ -1,0 +1,7 @@
+# VERBUM — Musée Virtuel de la Bible
+User-agent: *
+Allow: /
+Disallow: /tools/
+Disallow: /docs/
+
+Sitemap: https://verbum.example/sitemap.xml

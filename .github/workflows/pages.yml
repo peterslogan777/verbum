@@ -1,0 +1,48 @@
+# VERBUM — publication automatique sur GitHub Pages à chaque push sur main.
+# Dans Settings > Pages, choisir « Source : GitHub Actions ».
+name: Publier VERBUM sur GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Régénérer les pages pour l'adresse GitHub Pages
+        run: |
+          OWNER="${GITHUB_REPOSITORY_OWNER}"
+          REPO="${GITHUB_REPOSITORY#*/}"
+          if [ "$REPO" = "$OWNER.github.io" ]; then BASE="/"; else BASE="/$REPO/"; fi
+          python3 tools/build.py --url "https://$OWNER.github.io${BASE%/}" --base "$BASE"
+      - name: Préparer le site (sans les outils)
+        run: |
+          mkdir -p _site
+          cp -r index.html 404.html a-propos.html audioguide.html recherche.html sources.html \
+                robots.txt sitemap.xml site.webmanifest favicon-32.jpg favicon-64.jpg apple-touch-icon.jpg \
+                assets salles _site/
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
